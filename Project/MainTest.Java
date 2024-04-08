@@ -3,7 +3,7 @@ public class MainTest{
     public static void main(String[] args){
         Astronuat astro = new Astronuat();
         AstronautAdministrator astroAdmin = new AstronautAdministrator();
-        Spacechip ship = new Spacechip();
+        Spaceship ship = new Spaceship();
         SpaceshipAdministrator shipAdmin = new SpaceshipAdministrator();
         Launch launchAttempt = new Launch();
         System.out.println(astroAdmin);
