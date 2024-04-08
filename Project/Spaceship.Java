@@ -1,4 +1,3 @@
-package Project;
 public class Spaceship extends SpaceshipAdministrator{
     String shipName;
     int shipFuel;
