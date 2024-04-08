@@ -3,35 +3,40 @@ import java.util.*;
 public class AstronautAdministrator
 {
     ArrayList<String> name = new ArrayList<String>();
-    String newName;
     ArrayList<String> skills = new ArrayList<String>();
-    String newSkills;
     ArrayList<String> address = new ArrayList<String>();
-    String newAddress;
     ArrayList<String> passwordArray = new ArrayList<String>();
+    String newName;
+    String newSkills;
+    String newAddress;
     String password;
     String inputForChange;
+    String verifyString;
+    String removeName;
+    String removeSkills;
+    String removeAddress;
+    ArrayList<Integer> id = new ArrayList<Integer>();
+    ArrayList<Integer> amountOfFamily = new ArrayList<Integer>();
     int inputForInt;
     int idInput;
-    String verifyString;
     int addingSwitch = 0;
     int removingSwitch = 0;
     int changeSwitch = 0;
-    String removeName;
     int removeID;
-    String removeSkills;
-    String removeAddress;
     int removeAmountOfFam;
     int whileFIX = 0;
-    ArrayList<Integer> id = new ArrayList<Integer>();
     int newID;
-    ArrayList<Integer> amountOfFamily = new ArrayList<Integer>();
     int newAmountOfFam;
     int i;
+
+
     Scanner kbd = new Scanner(System.in);
+
 
 //Choosing add, remove, or change.
 //Along with what they want to change.
+
+
     public AstronautAdministrator()
     {
     }
@@ -60,11 +65,15 @@ public class AstronautAdministrator
             switchAstronautInfo(oldName, oldID, oldSkills, oldAddress, oldFam, oldPassword);
         }
     }
+
 //operation for everything
+
     public void switchAstronautInfo(String oldName, int oldID, String oldSkills, String oldAddress, int oldFam, String oldPassword)
     {
         switch (changeSwitch) {
+
 ////Add////
+
             case 1:
             whileFIX = 0;
                 while(whileFIX == 0)
