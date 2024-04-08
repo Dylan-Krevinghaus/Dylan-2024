@@ -1,4 +1,3 @@
-package Project;
 import java.util.Scanner;
 import java.util.*;
 public class AstronautAdministrator
