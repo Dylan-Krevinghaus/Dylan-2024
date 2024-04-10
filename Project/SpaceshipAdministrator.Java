@@ -2,16 +2,29 @@ import java.util.*;
 import java.util.Scanner;
 public class SpaceshipAdministrator
 {
-    String shipName;
-    int shipFuel;
-    int fuelCapacity;
-    int crewCapacity;
-    int whileFIX;
+    ArrayList<String> shipName = new ArrayList<String>();
+    ArrayList<Integer> shipFuel = new ArrayList<Integer>();
+    ArrayList<Integer> fuelCapacity = new ArrayList<Integer>();
+    ArrayList<Integer> crewCapacity = new ArrayList<Integer>();
+    String newShipName;
+    String removeShipName;
     String verifyString;
+    String inputForChange;
+    String shipFuelIntake;
+    int newFuel;
+    int newFuelCap;
+    int newCrewCap;
+    int whileFIX;
+    int removeFuel;
+    int removeFuelCap;
+    int removeCrewCap;
     int changeSwitch;
     int addingSwitch;
     int removingSwitch;
-    
+    int inputForInt;
+    int i = 0;
+    int a = 0;
+    boolean vailidity;
 
 
     Scanner kbd = new Scanner(System.in);
@@ -54,7 +67,7 @@ public class SpaceshipAdministrator
             whileFIX = 0;
                 while(whileFIX == 0)
                 {
-                    System.out.println("Please enter the number that correlates with the following: /n 1. Name /n 2. ID /n 3. Skills /n 4. Address /n 5. Family numbers");
+                    System.out.println("Please enter the number that correlates with the following: /n 1. Name /n 2. Fuel /n 3. Fuel Capacity /n 4. Crew Capacity");
                     verifyString= kbd.nextLine();
                     try
                     {
@@ -72,38 +85,70 @@ public class SpaceshipAdministrator
                 switch (addingSwitch){
 //Add Name
                     case 1:
-                        System.out.println("Type the name that you want to add: ");
-                        newName = kbd.nextLine();
-                        name.add(newName);
-//Add ID
-                    case 2:
-                        System.out.println("Type the ID that you want to add: ");
-                        newID = kbd.nextInt();
+                        while(whileFIX == 0)
+                        {
+                            System.out.println("Type the name that you want to add: ");
+                            newShipName = kbd.nextLine();
+                            vailidity=true;
+                            for(i = 0; i < shipName.size(); i++)
+                            {
+                                if(newShipName == shipName.get(i))
+                                {
+                                    System.out.println("This ship has already been made.");
+                                    vailidity = false;
+                                }
+                            }
+                            if(vailidity == true)
+                                {
+                                    shipName.add(newShipName);
+                                    whileFIX = 1;
+                                }
+                        }
+//Add Fuel
+                    case 2://what ship would you like to add to
+                        System.out.println(shipName);
+                        System.out.println("What ship would you like to add the fuel into?");
+                        shipFuelIntake = kbd.nextLine();
+                        for(i = 0; i < shipName.size(); i++)
+                        {
+                            if(shipFuelIntake == shipName.get(i))
+                            {
+                                a = 1;
+                                break;
+                            }
+                        }
+                        whileFIX = 0;
+                        while(whileFIX == 0)
+                        {
+                            System.out.println("Type the amount of fuel that you want to add: ");
+                            newFuel = kbd.nextInt();
+                            kbd.nextLine();
+                            if(a == 1)
+                            {
+                                shipFuel.add(i, newFuel);
+                                whileFIX = 1;
+                            }
+                        }
+                        //if fuel is not max add it
+//Add Fuel Capacity
+                    case 3://to what ship
+                        System.out.println("Type the fuel capacity that you want to add: ");
+                        newFuelCap = kbd.nextInt();
                         kbd.nextLine();
-                        id.add(newID);
-//Add Skills
-                    case 3:
-                        System.out.println("Type the skills that you want to add: ");
-                        newSkills = kbd.nextLine();
-                        skills.add(newSkills);
-//Add Address
-                    case 4:
-                        System.out.println("Type the address that you want to add: ");
-                        newAddress = kbd.nextLine();
-                        address.add(newAddress);
-//Add Family numbers
-                    case 5:
-                        System.out.println("Type the amount of family that you want to add: ");
-                        newAmountOfFam = kbd.nextInt();
-                        amountOfFamily.add(newAmountOfFam);
-
+                        fuelCapacity.add(newFuelCap);
+//Add Crew Capacity
+                    case 4://to what ship
+                        System.out.println("Type the crew capacity that you want to add: ");
+                        newCrewCap = kbd.nextInt();
+                        kbd.nextLine();
+                        crewCapacity.add(newCrewCap);
                 }
 ////Remove////
             case 2:
             whileFIX = 0;
                 while(whileFIX == 0)
                 {
-                    System.out.println("Please enter the number that correlates with the following: /n 1. Name /n 2. ID /n 3. Skills /n 4. Address /n 5. Family numbers");
+                    System.out.println("Please enter the number that correlates with the following: /n 1. Name /n 2. Fuel /n 3. Fuel Capacity /n 4. Crew Capacity");
                     verifyString= kbd.nextLine();
                     try
                     {
@@ -124,63 +169,52 @@ public class SpaceshipAdministrator
                         //how to remove from array list
                         //variable.remove(index);
                         System.out.println("Please type in the exact name you would like to remove");
-                        removeName = kbd.nextLine();
-                        for(i = 0; i < name.size(); i++)
+                        removeShipName = kbd.nextLine();
+                        for(i = 0; i < shipName.size(); i++)
                         {
-                            newName = name.get(i);
-                            if(newName == removeName)
+                            newShipName = shipName.get(i);
+                            if(newShipName == removeShipName)
                             {
-                                name.remove(i);
+                                shipName.remove(i);
                             }
                         }
-//Remove ID
+//Remove Fuel
                     case 2:
-                        System.out.println("Please type in the exact ID you would like to remove");
-                            removeID = kbd.nextInt();
+                        System.out.println("Please type in the exact amount of fuel you would like to remove");
+                            removeFuel = kbd.nextInt();
                             kbd.nextLine();
-                            for(i = 0; i < id.size(); i++)
+                            for(i = 0; i < shipFuel.size(); i++)
                             {
-                                newID = id.get(i);
-                                if(newID == removeID)
+                                newFuel = shipFuel.get(i);
+                                if(newFuel == removeFuel)
                                 {
-                                    id.remove(i);
+                                    shipFuel.remove(i);
                                 }
                             }
-//Remove Skills
+//Remove Fuel Capacity
                     case 3:
-                        System.out.println("Please type in the exact skills you would like to remove");
-                            removeSkills = kbd.nextLine();
-                            for(i = 0; i < skills.size(); i++)
-                            {
-                                newSkills = skills.get(i);
-                                if(newSkills == removeSkills)
-                                {
-                                    skills.remove(i);
-                                }
-                            }
-//Remove Address
-                    case 4:
-                        System.out.println("Please type in the exact address you would like to remove");
-                            removeAddress = kbd.nextLine();
-                            for(i = 0; i < address.size(); i++)
-                            {
-                                newAddress = address.get(i);
-                                if(newAddress == removeAddress)
-                                {
-                                    address.remove(i);
-                                }
-                            }
-//Remove Family Numbers
-                    case 5:
-                        System.out.println("Please type in the exact family number you would like to remove");
-                            removeAmountOfFam = kbd.nextInt();
+                        System.out.println("Please type in the exact fuel capacity you would like to remove");
+                            removeFuelCap = kbd.nextInt();
                             kbd.nextLine();
-                            for(i = 0; i < amountOfFamily.size(); i++)
+                            for(i = 0; i < fuelCapacity.size(); i++)
                             {
-                                newAmountOfFam = amountOfFamily.get(i);
-                                if(newAmountOfFam == removeAmountOfFam)
+                                newFuelCap = fuelCapacity.get(i);
+                                if(newFuelCap == removeFuelCap)
                                 {
-                                    amountOfFamily.remove(i);
+                                    fuelCapacity.remove(i);
+                                }
+                            }
+//Remove Crew Capacity
+                    case 4:
+                        System.out.println("Please type in the exact crew capacity you would like to remove");
+                            removeCrewCap = kbd.nextInt();
+                            kbd.nextLine();
+                            for(i = 0; i < crewCapacity.size(); i++)
+                            {
+                                newCrewCap = crewCapacity.get(i);
+                                if(newCrewCap == removeCrewCap)
+                                {
+                                    crewCapacity.remove(i);
                                 }
                             }
                 }
@@ -189,7 +223,7 @@ public class SpaceshipAdministrator
             whileFIX = 0;
                 while(whileFIX == 0)
                 {
-                    System.out.println("Please enter the number that correlates with the following: /n 1. Name /n 2. ID /n 3. Skills /n 4. Address /n 5. Password");
+                    System.out.println("Please enter the number that correlates with the following: /n 1. Name /n 2. Fuel /n 3. Fuel Capacity /n 4. Crew Capacity");
                     verifyString = kbd.nextLine();
                     try
                     {
@@ -208,77 +242,68 @@ public class SpaceshipAdministrator
                 {
 //Change Name
                     case 1:
-                        System.out.println(name);
+                        System.out.println(shipName);
                         System.out.println("Enter the name you would like to change.");
                         inputForChange = kbd.nextLine();
-                        for(i = 0; i < name.size(); i++)
+                        for(i = 0; i < shipName.size(); i++)
                         {
-                            if(name.get(i) == inputForChange)
+                            if(shipName.get(i) == inputForChange)
                             {
-                                name.remove(inputForChange);
+                                shipName.remove(inputForChange);
                                 System.out.println("Enter new name: ");
                                 inputForChange = kbd.nextLine();
-                                name.add(inputForChange);
+                                shipName.add(inputForChange);
                             }
                         }
-//Change ID
+//Change Fuel
                     case 2:
-                        System.out.println(id);
-                        System.out.println("Enter the ID you would like to change.");
-                        idInput = kbd.nextInt();
+                        System.out.println(shipFuel);
+                        System.out.println("Enter the fuel you would like to change.");
+                        inputForInt = kbd.nextInt();
                         kbd.nextLine();
-                        for(i = 0; i < id.size(); i++)
+                        for(i = 0; i < shipFuel.size(); i++)
                         {
-                            if(id.get(i) == idInput)
+                            if(shipFuel.get(i) == inputForInt)
                             {
-                                id.remove(idInput);
-                                System.out.println("Enter new name: ");
+                                shipFuel.remove(inputForInt);
+                                System.out.println("Enter new fuel: ");
                                 inputForInt = kbd.nextInt();
-                                id.add(inputForInt);
+                                kbd.nextLine();
+                                shipFuel.add(inputForInt);
                             }
                         }
-//Change Skills
+//Change Fuel Capacity
                     case 3:
-                        System.out.println(skills);
-                        System.out.println("Enter the skills you would like to change.");
-                        inputForChange = kbd.nextLine();
-                        for(i = 0; i < skills.size(); i++)
+                        System.out.println(shipFuel);
+                        System.out.println("Enter the fuel capacity you would like to change.");
+                        inputForInt = kbd.nextInt();
+                        kbd.nextLine();
+                        for(i = 0; i < fuelCapacity.size(); i++)
                         {
-                            if(skills.get(i) == inputForChange)
+                            if(fuelCapacity.get(i) == inputForInt)
                             {
-                                skills.remove(inputForChange);
-                                System.out.println("Enter new name: ");
-                                inputForChange = kbd.nextLine();
-                                skills.add(inputForChange);
+                                fuelCapacity.remove(inputForInt);
+                                System.out.println("Enter new fuel capacity: ");
+                                inputForInt = kbd.nextInt();
+                                kbd.nextLine();
+                                fuelCapacity.add(inputForInt);
                             }
                         }
-//Change Address
+//Change Crew Capacity
                     case 4:
-                        System.out.println(address);
-                        System.out.println("Enter the address you would like to change.");
-                        inputForChange = kbd.nextLine();
-                        for(i = 0; i < address.size(); i++)
+                        System.out.println(shipFuel);
+                        System.out.println("Enter the crew capacity you would like to change.");
+                        inputForInt = kbd.nextInt();
+                        kbd.nextLine();
+                        for(i = 0; i < crewCapacity.size(); i++)
                         {
-                            if(address.get(i) == inputForChange)
+                            if(crewCapacity.get(i) == inputForInt)
                             {
-                                address.remove(inputForChange);
-                                System.out.println("Enter new name: ");
-                                inputForChange = kbd.nextLine();
-                                address.add(inputForChange);
-                            }
-                        }
-//Change Password
-                    case 5:
-                        System.out.println("Enter the password you would like to change.");
-                        inputForChange = kbd.nextLine();
-                        for(i = 0; i < name.size(); i++)
-                        {
-                            if(passwordArray.get(i) == inputForChange)
-                            {
-                                passwordArray.remove(inputForChange);
-                                System.out.println("Enter new password: ");
-                                inputForChange = kbd.nextLine();
-                                passwordArray.add(inputForChange);
+                                crewCapacity.remove(inputForInt);
+                                System.out.println("Enter new crew capacity: ");
+                                inputForInt = kbd.nextInt();
+                                kbd.nextLine();
+                                crewCapacity.add(inputForInt);
                             }
                         }
                 }
