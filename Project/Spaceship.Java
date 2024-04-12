@@ -3,14 +3,19 @@ public class Spaceship extends SpaceshipAdministrator{
     int shipFuel;
     int fuelCapacity;
     int crewCapacity;
-    public Spacechip(){
+    public Spacechip()
+    {
     }
-    public String spaceshipName(){
+    public String spaceshipName()
+    {
     }
-    public int spaceshipFuel(){
+    public int spaceshipFuel()
+    {
     }
-    public int fuelCapacity(){
+    public int fuelCapacity()
+    {
     }
-    public int crewCapacity(){
+    public int crewCapacity()
+    {
     }
 }

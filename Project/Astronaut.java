@@ -1,22 +1,30 @@
-public class Astronuat extends AstronautAdministrator{
+public class Astronaut extends AstronautAdministrator
+{
     String name;
     String skills;
     String address;
     String password;
     int id;
     int amountOfFamily;
-    public Astronuat(){
+    public Astronaut()
+    {
     }
-    public String getName(){
+    public String getName()
+    {
     }
-    public int getID(){
+    public int getID()
+    {
     }
-    public String getSkills(){
+    public String getSkills()
+    {
     }
-    public String getAddress(){
+    public String getAddress()
+    {
     }
-    public int familyNumbers(){
+    public int familyNumbers()
+    {
     }
-    public String createPassword(){
+    public String createPassword()
+    {
     }
 }
