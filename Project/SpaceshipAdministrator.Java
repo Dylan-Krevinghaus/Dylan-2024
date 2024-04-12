@@ -249,9 +249,10 @@ public class SpaceshipAdministrator
                         //how to remove from array list
                         //variable.remove(index);
                         whileFIX = 0;
-                        while(whileFIX = 0)
+                        a = 0;
+                        while(whileFIX == 0)
                         {
-                            system.out.println(shipName);
+                            System.out.println(shipName);
                             System.out.println("Please type in the exact name you would like to remove. Note: Removing the name does not remove its attributes");
                             removeShipName = kbd.nextLine();
                             for(i = 0; i < shipName.size(); i++)
@@ -260,9 +261,10 @@ public class SpaceshipAdministrator
                                 if(newShipName == removeShipName)
                                 {
                                     shipName.remove(i);
+                                    a = 1;
                                 }
                             }
-                            else
+                            if(a != 1)
                             {
                                 System.out.println("Your entry was not a ship name.");
                             }
