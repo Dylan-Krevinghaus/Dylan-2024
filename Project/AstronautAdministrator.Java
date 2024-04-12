@@ -70,7 +70,8 @@ public class AstronautAdministrator
 
     public void switchAstronautInfo(String oldName, int oldID, String oldSkills, String oldAddress, int oldFam, String oldPassword)
     {
-        switch (changeSwitch) {
+        switch (changeSwitch)
+        {
 
 ////Add////
 
@@ -93,7 +94,8 @@ public class AstronautAdministrator
                         System.out.println("Not a valid input.");
                     }
                 }
-                switch (addingSwitch){
+                switch (addingSwitch)
+                {
 //Add Name
                     case 1:
                         System.out.println("Type the name that you want to add: ");
@@ -142,7 +144,8 @@ public class AstronautAdministrator
                         System.out.println("Not a valid input.");
                     }
                 }
-                switch (addingSwitch){
+                switch (addingSwitch)
+                {
 //Remove Name
                     case 1:
                         //how to remove from array list

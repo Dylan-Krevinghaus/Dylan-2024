@@ -58,7 +58,8 @@ public class SpaceshipAdministrator
 
     public void switchSpaceshipInfo()
     {
-        switch (changeSwitch) {
+        switch (changeSwitch)
+        {
 
 ////Add////
 
@@ -81,7 +82,8 @@ public class SpaceshipAdministrator
                         System.out.println("Not a valid input.");
                     }
                 }
-                switch (addingSwitch){
+                switch (addingSwitch)
+                {
 //Add Name
                     case 1:
                         whileFIX = 0;
@@ -107,6 +109,7 @@ public class SpaceshipAdministrator
 //Add Fuel
                     case 2://what ship would you like to add to
                         whileFIX = 0;
+                        a = 0;
                         while(whileFIX == 0)
                         {
                             System.out.println(shipName);
@@ -145,6 +148,7 @@ public class SpaceshipAdministrator
 //Add Fuel Capacity
                     case 3://to what ship
                         whileFIX = 0;
+                        a = 0;
                         while(whileFIX == 0)
                         {
                             System.out.println(shipName);
@@ -182,6 +186,7 @@ public class SpaceshipAdministrator
 //Add Crew Capacity
                     case 4://to what ship
                         whileFIX = 0;
+                        a = 0;
                         while(whileFIX == 0)
                         {
                             System.out.println(shipName);
@@ -237,7 +242,8 @@ public class SpaceshipAdministrator
                         System.out.println("Not a valid input.");
                     }
                 }
-                switch (addingSwitch){
+                switch (addingSwitch)
+                {
 //Remove Name
                     case 1:
                         //how to remove from array list
@@ -264,6 +270,7 @@ public class SpaceshipAdministrator
 //Remove Fuel
                     case 2:
                         whileFIX = 0;
+                        a = 0;
                         while(whileFIX == 0)
                         {
                             System.out.println(shipName);
@@ -292,10 +299,36 @@ public class SpaceshipAdministrator
                             System.out.println("Please type in the exact amount of fuel you would like to remove.");
                             removeFuel = kbd.nextInt();
                             kbd.nextLine();
-                            newFuel = shipFuel.get(i);
-                            if(newFuel == removeFuel)
+                            whileFIX = 0
+                            while(whileFIX == 0)
                             {
-                                shipFuel.remove(i);
+                                if(a == 1)
+                                {
+                                    fixedShipFuel = shipFuel.get(i) - removeFuel;
+                                    if(fixedShipFuel < 0)
+                                    {   
+                                        System.out.println("This fuel is now empty. Would you like to remove it from the ship? 'Yes' or 'No'")
+                                        removeFuel = kbd.nextLine();
+                                        whileFIX = 0;
+                                        while(whileFIX == 0)
+                                        {
+                                            if(removeFuel == "Yes")
+                                            {
+                                                shipFuel.remove(i);
+                                                whileFIX = 1;
+                                            }
+                                            else if(removeFuel == "No")
+                                            {
+                                                shipFuel.get(i) = 0;
+                                                whileFIX = 1;
+                                            }
+                                            else if(whileFIX = 0)
+                                            {
+                                            System.out.println("That was not the correct input.")
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
 //Remove Fuel Capacity
