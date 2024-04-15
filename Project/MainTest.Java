@@ -2,7 +2,7 @@ import java.util.*;
 public class MainTest{
     public static void main(String[] args)
     {
-        Astronuat astro = new Astronuat();
+        Astronaut astro = new Astronaut();
         AstronautAdministrator astroAdmin = new AstronautAdministrator();
         Spaceship ship = new Spaceship();
         SpaceshipAdministrator shipAdmin = new SpaceshipAdministrator();

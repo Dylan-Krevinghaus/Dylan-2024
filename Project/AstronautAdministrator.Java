@@ -1,5 +1,5 @@
-import java.util.Scanner;
 import java.util.*;
+import java.util.Scanner;
 public class AstronautAdministrator
 {
     ArrayList<String> name = new ArrayList<String>();
