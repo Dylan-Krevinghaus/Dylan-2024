@@ -8,10 +8,12 @@ public class SpaceshipAdministrator
     String verifyString;
     String inputForChange;
     String shipCheck;
+    String removeYesOrNo;
     ArrayList<Integer> shipFuel = new ArrayList<Integer>();
     ArrayList<Integer> fuelCapacity = new ArrayList<Integer>();
     ArrayList<Integer> crewCapacity = new ArrayList<Integer>();
     int newFuel;
+    int fixedShipFuel;
     int newFuelCap;
     int newCrewCap;
     int whileFIX;
@@ -296,18 +298,18 @@ public class SpaceshipAdministrator
                             }
                         }
                         whileFIX = 0;
-                        while(whileFIX = 0)
+                        while(whileFIX == 0)
                         {
                             System.out.println("Please type in the exact amount of fuel you would like to remove.");
                             removeFuel = kbd.nextInt();
                             kbd.nextLine();
-                            whileFIX = 0
+                            whileFIX = 0;
                             while(whileFIX == 0)
                             {
                                 if(a == 1)
                                 {
                                     fixedShipFuel = shipFuel.get(i) - removeFuel;
-                                    if(fixedShipFuel < 0)
+                                    if(fixedShipFuel <= 0)
                                     {   
                                         System.out.println("This fuel is now empty. Would you like to remove it from the ship? 'Yes' or 'No'")
                                         removeFuel = kbd.nextLine();
@@ -324,7 +326,7 @@ public class SpaceshipAdministrator
                                                 shipFuel.get(i) = 0;
                                                 whileFIX = 1;
                                             }
-                                            else if(whileFIX = 0)
+                                            else if(whileFIX == 0)
                                             {
                                             System.out.println("That was not the correct input.")
                                             }
