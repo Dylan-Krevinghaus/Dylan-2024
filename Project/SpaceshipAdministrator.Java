@@ -18,7 +18,6 @@ public class SpaceshipAdministrator
     int newCrewCap;
     int whileFIX;
     int removeFuel;
-    int removeFuelCap;
     int removeCrewCap;
     int changeSwitch;
     int addingSwitch;
@@ -91,7 +90,7 @@ public class SpaceshipAdministrator
                         whileFIX = 0;
                         while(whileFIX == 0)
                         {
-                            System.out.println("Type the name that you want to add: ");
+                            System.out.println("Enter the name that you want to add: ");
                             newShipName = kbd.nextLine();
                             vailidity = true;
                             for(i = 0; i < shipName.size(); i++)
@@ -137,7 +136,7 @@ public class SpaceshipAdministrator
                         whileFIX = 0;
                         while(whileFIX == 0)
                         {
-                            System.out.println("Type the amount of fuel that you want to add: ");
+                            System.out.println("Enter the amount of fuel that you want to add: ");
                             newFuel = kbd.nextInt();
                             kbd.nextLine();
                             if(a == 1)
@@ -176,7 +175,7 @@ public class SpaceshipAdministrator
                         whileFIX = 0;
                         while(whileFIX == 0)
                         {
-                            System.out.println("Type the fuel capacity that you want to add: ");
+                            System.out.println("Enter the fuel capacity that you want to add: ");
                             newFuelCap = kbd.nextInt();
                             kbd.nextLine();
                             if(a == 1)
@@ -214,7 +213,7 @@ public class SpaceshipAdministrator
                         whileFIX = 0;
                         while(whileFIX == 0)
                         {
-                            System.out.println("Type the crew capacity that you want to add: ");
+                            System.out.println("Enter the crew capacity that you want to add: ");
                             newCrewCap = kbd.nextInt();
                             kbd.nextLine();
                             if(a == 1)
@@ -255,7 +254,7 @@ public class SpaceshipAdministrator
                         while(whileFIX == 0)
                         {
                             System.out.println(shipName);
-                            System.out.println("Please type in the exact name you would like to remove. Note: Removing the name does not remove its attributes");
+                            System.out.println("Please enter in the exact name you would like to remove. Note: Removing the name does not remove its attributes");
                             removeShipName = kbd.nextLine();
                             for(i = 0; i < shipName.size(); i++)
                             {
@@ -300,7 +299,7 @@ public class SpaceshipAdministrator
                         whileFIX = 0;
                         while(whileFIX == 0)
                         {
-                            System.out.println("Please type in the exact amount of fuel you would like to remove.");
+                            System.out.println("Please Enter in the exact amount of fuel you would like to remove.");
                             removeFuel = kbd.nextInt();
                             kbd.nextLine();
                             whileFIX = 0;
@@ -311,24 +310,24 @@ public class SpaceshipAdministrator
                                     fixedShipFuel = shipFuel.get(i) - removeFuel;
                                     if(fixedShipFuel <= 0)
                                     {   
-                                        System.out.println("This fuel is now empty. Would you like to remove it from the ship? 'Yes' or 'No'")
-                                        removeFuel = kbd.nextLine();
+                                        System.out.println("This fuel is now empty. Would you like to remove it from the ship? 'Yes' or 'No'");
+                                        removeYesOrNo = kbd.nextLine();
                                         whileFIX = 0;
                                         while(whileFIX == 0)
                                         {
-                                            if(removeFuel == "Yes")
+                                            if(removeYesOrNo == "Yes")
                                             {
                                                 shipFuel.remove(i);
                                                 whileFIX = 1;
                                             }
-                                            else if(removeFuel == "No")
+                                            else if(removeYesOrNo == "No")
                                             {
-                                                shipFuel.get(i) = 0;
+                                                shipFuel.set(i, 0);
                                                 whileFIX = 1;
                                             }
                                             else if(whileFIX == 0)
                                             {
-                                            System.out.println("That was not the correct input.")
+                                                System.out.println("That was not the correct input.");
                                             }
                                         }
                                     }
@@ -337,31 +336,59 @@ public class SpaceshipAdministrator
                         }
 //Remove Fuel Capacity
                     case 3:
-                        System.out.println("Please type in the exact fuel capacity you would like to remove");
-                        removeFuelCap = kbd.nextInt();
-                        kbd.nextLine();
-                        for(i = 0; i < fuelCapacity.size(); i++)
+                        whileFIX = 0;
+                        a = 0;
+                        while(whileFIX == 0)
                         {
-                            newFuelCap = fuelCapacity.get(i);
-                            if(newFuelCap == removeFuelCap)
+                            System.out.println(shipName);
+                            System.out.println("Please enter the ship's name in order to remove the fuel capacity.");
+                            shipCheck = kbd.nextLine();
+                            for(i = 0; i < shipName.size(); i++)
                             {
-                                fuelCapacity.remove(i);
+                                if(shipCheck == shipName.get(i))
+                                {
+                                    a = 1;
+                                    break;
+                                }
+                            }
+                            if(a == 1)
+                            {
+                                whileFIX = 1;
+                            }
+                            else
+                            {
+                                System.out.println("Your entry was not a ship name.");
                             }
                         }
+                        fuelCapacity.remove(i);
 //Remove Crew Capacity
                     case 4:
-                        System.out.println("Please type in the exact crew capacity you would like to remove");
-                        removeCrewCap = kbd.nextInt();
-                        kbd.nextLine();
-                        for(i = 0; i < crewCapacity.size(); i++)
+                        whileFIX = 0;
+                        a = 0;
+                        while(whileFIX == 0)
                         {
-                            newCrewCap = crewCapacity.get(i);
-                            if(newCrewCap == removeCrewCap)
+                            System.out.println(shipName);
+                            System.out.println("Please enter the ship's name in order to remove the fuel capacity.");
+                            shipCheck = kbd.nextLine();
+                            for(i = 0; i < shipName.size(); i++)
                             {
-                                crewCapacity.remove(i);
+                                if(shipCheck == shipName.get(i))
+                                {
+                                    a = 1;
+                                    break;
+                                }
+                            }
+                            if(a == 1)
+                            {
+                                whileFIX = 1;
+                            }
+                            else
+                            {
+                                System.out.println("Your entry was not a ship name.");
                             }
                         }
-                }
+                        crewCapacity.remove(i);
+                    }
 ////Change////
             case 3:
                 whileFIX = 0;
@@ -393,10 +420,10 @@ public class SpaceshipAdministrator
                         {
                             if(shipName.get(i) == inputForChange)
                             {
-                                shipName.remove(inputForChange);
+                                shipName.remove(i);
                                 System.out.println("Enter new name: ");
                                 inputForChange = kbd.nextLine();
-                                shipName.add(inputForChange);
+                                shipName.add(i, inputForChange);
                             }
                         }
 //Change Fuel
@@ -409,11 +436,11 @@ public class SpaceshipAdministrator
                         {
                             if(shipFuel.get(i) == inputForInt)
                             {
-                                shipFuel.remove(inputForInt);
+                                shipFuel.remove(i);
                                 System.out.println("Enter new fuel: ");
                                 inputForInt = kbd.nextInt();
                                 kbd.nextLine();
-                                shipFuel.add(inputForInt);
+                                shipFuel.add(i, inputForInt);
                             }
                         }
 //Change Fuel Capacity
@@ -426,11 +453,11 @@ public class SpaceshipAdministrator
                         {
                             if(fuelCapacity.get(i) == inputForInt)
                             {
-                                fuelCapacity.remove(inputForInt);
+                                fuelCapacity.remove(i);
                                 System.out.println("Enter new fuel capacity: ");
                                 inputForInt = kbd.nextInt();
                                 kbd.nextLine();
-                                fuelCapacity.add(inputForInt);
+                                fuelCapacity.add(i, inputForInt);
                             }
                         }
 //Change Crew Capacity
@@ -443,11 +470,11 @@ public class SpaceshipAdministrator
                         {
                             if(crewCapacity.get(i) == inputForInt)
                             {
-                                crewCapacity.remove(inputForInt);
+                                crewCapacity.remove(i);
                                 System.out.println("Enter new crew capacity: ");
                                 inputForInt = kbd.nextInt();
                                 kbd.nextLine();
-                                crewCapacity.add(inputForInt);
+                                crewCapacity.add(i, inputForInt);
                             }
                         }
                 }
