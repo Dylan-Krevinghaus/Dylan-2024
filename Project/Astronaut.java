@@ -19,7 +19,7 @@ public class Astronaut extends AstronautAdministrator
          this.address = address;
           this.password = password;
            this.id = id;
-            this.amountOfFamily = amountOfFamily; 
+            this.amountOfFamily = amountOfFamily;
     }
    
     // Methods getName and setName, return and set the name of the astronaut
