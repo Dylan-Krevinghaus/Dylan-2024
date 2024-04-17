@@ -24,63 +24,75 @@ public class Astronaut extends AstronautAdministrator
    
     // Methods getName and setName, return and set the name of the astronaut
     
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
     
    // Methods getSkills and setSkills, return and set the skills attributed to the following astronaut
     
-    public String getSkills() {
+    public String getSkills()
+    {
         return skills;
-   }
+    }
     
-    public void setSkills(String skills) {
+    public void setSkills(String skills)
+    {
         this.skills = skills;
     }
 
     // Methods getAddress and setAddress, return and set the address of the astronaut
     
-    public String getAddress() {
-        return adress;
+    public String getAddress()
+    {
+        return address;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(String address)
+    {
         this.address = address;
     }
 
     // The following methods, getPassword and setPassword, grabs and sets the password the astronaut has
     // public String createPassword(){ }
     
-    public String getCreatePassword() {
+    public String getCreatePassword()
+    {
         return password;
     }
 
-    public void setCreatePassword(String password) {
+    public void setCreatePassword(String password)
+    {
         this.password = password;
     }
 
     // The following methods, getID and setID, grabs and sets the id of the astronaut
     
-    public int getID() {
+    public int getID()
+    {
         return id;
     }
 
-     public void setID(int id) {
+     public void setID(int id)
+     {
         this.id = id;
     }
 
     // The methods, getFamilyNumbers and setFamilyNumbers, works to count the number of family members of the astronaut
     //  public int familyNumbers(){ }
     
-    public int getFamilyNumbers() {
+    public int getFamilyNumbers()
+    {
         return amountOfFamily;
     }
 
-    public void setFamilyNumbers(int amountOfFamily) {
+    public void setFamilyNumbers(int amountOfFamily)
+    {
         this.amountOfFamily = amountOfFamily;
     }
 }
