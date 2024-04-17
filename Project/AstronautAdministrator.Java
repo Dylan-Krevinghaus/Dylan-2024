@@ -28,21 +28,21 @@ public class AstronautAdministrator
     int newID;
     int newAmountOfFam;
     int i;
-
-
     Scanner kbd = new Scanner(System.in);
-
-
 //Choosing add, remove, or change.
 //Along with what they want to change.
-
-
+    public AstronautAdministrator(String astroName, String astroSkills, String astroAddress, String astroPassword, int astroID, int astroAmountOfFamily)
+    {
+        name.add(astroName);
+        skills.add(astroSkills);
+        address.add(astroAddress);
+        passwordArray.add(astroPassword);
+        id.add(astroID);
+        amountOfFamily.add(astroAmountOfFamily);
+    }
     public AstronautAdministrator()
     {
-    }
-
-    public AstronautAdministrator(String oldName, int oldID, String oldSkills, String oldAddress, int oldFam, String oldPassword)
-    {
+        whileFIX = 0;
         while(whileFIX == 0)
         {
             System.out.println("Please enter the number that correlates with the action. /n 1. add /n 2. remove /n 3. change /n 4. exit");
@@ -60,21 +60,17 @@ public class AstronautAdministrator
                 System.out.println("Not a valid input.");
             }
         }
-        if(changeSwitch != 4)
+        if(changeSwitch >= 1 && changeSwitch <= 3)
         {
-            switchAstronautInfo(oldName, oldID, oldSkills, oldAddress, oldFam, oldPassword);
+            switchAstronautInfo();
         }
     }
-
 //operation for everything
-
-    public void switchAstronautInfo(String oldName, int oldID, String oldSkills, String oldAddress, int oldFam, String oldPassword)
+    public void switchAstronautInfo()
     {
         switch (changeSwitch)
         {
-
 ////Add////
-
             case 1:
             whileFIX = 0;
                 while(whileFIX == 0)
@@ -122,7 +118,6 @@ public class AstronautAdministrator
                         System.out.println("Type the amount of family that you want to add: ");
                         newAmountOfFam = kbd.nextInt();
                         amountOfFamily.add(newAmountOfFam);
-
                 }
 ////Remove////
             case 2:
@@ -148,8 +143,6 @@ public class AstronautAdministrator
                 {
 //Remove Name
                     case 1:
-                        //how to remove from array list
-                        //variable.remove(index);
                         System.out.println("Please type in the exact name you would like to remove");
                         removeName = kbd.nextLine();
                         for(i = 0; i < name.size(); i++)

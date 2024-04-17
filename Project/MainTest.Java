@@ -17,6 +17,8 @@ public class MainTest{
         {
             case 1:
                 System.out.println("");
+                index = kbd.nextInt();
+                kbd.nextLine();
                 switch(index)
                 {   
                     case 1:
@@ -26,6 +28,8 @@ public class MainTest{
                 }
             case 2:
                 System.out.println("");
+                index = kbd.nextInt();
+                kbd.nextLine();
                 switch(index)
                 {
                     case 1:

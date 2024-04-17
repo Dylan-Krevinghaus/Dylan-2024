@@ -26,12 +26,18 @@ public class SpaceshipAdministrator
     int i = 0;
     int a = 0;
     boolean vailidity;
-
     Scanner kbd = new Scanner(System.in);
-
 //Constructor//
+    public SpaceshipAdministrator(String shipName, int shipFuel, int fuelCapacity, int crewCapacity)
+        {
+            this.shipName.add(shipName);
+            this.shipFuel.add(shipFuel);
+            this.fuelCapacity.add(fuelCapacity);
+            this.crewCapacity.add(crewCapacity);
+        }
     public SpaceshipAdministrator()
     {
+        whileFIX = 0;
         while(whileFIX == 0)
         {
             System.out.println("Please enter the number that correlates with the action. /n 1. add /n 2. remove /n 3. change /n 4. exit");
@@ -54,16 +60,12 @@ public class SpaceshipAdministrator
             switchSpaceshipInfo();
         }
     }
-
-    //operation for everything
-
+////operation for everything////
     public void switchSpaceshipInfo()
     {
         switch (changeSwitch)
         {
-
 ////Add////
-
             case 1:
             whileFIX = 0;
                 while(whileFIX == 0)
@@ -108,7 +110,7 @@ public class SpaceshipAdministrator
                                 }
                         }
 //Add Fuel
-                    case 2://what ship would you like to add to
+                    case 2:
                         whileFIX = 0;
                         a = 0;
                         while(whileFIX == 0)
@@ -145,9 +147,8 @@ public class SpaceshipAdministrator
                                 whileFIX = 1;
                             }
                         }
-                        //if fuel is not max add it
 //Add Fuel Capacity
-                    case 3://to what ship
+                    case 3:
                         whileFIX = 0;
                         a = 0;
                         while(whileFIX == 0)
@@ -185,7 +186,7 @@ public class SpaceshipAdministrator
                             }
                         }
 //Add Crew Capacity
-                    case 4://to what ship
+                    case 4:
                         whileFIX = 0;
                         a = 0;
                         while(whileFIX == 0)
@@ -247,8 +248,6 @@ public class SpaceshipAdministrator
                 {
 //Remove Name
                     case 1:
-                        //how to remove from array list
-                        //variable.remove(index);
                         whileFIX = 0;
                         a = 0;
                         while(whileFIX == 0)
@@ -265,7 +264,11 @@ public class SpaceshipAdministrator
                                     a = 1;
                                 }
                             }
-                            if(a != 1)
+                            if(a == 1)
+                            {
+                                whileFIX = 1;
+                            }
+                            else
                             {
                                 System.out.println("Your entry was not a ship name.");
                             }
