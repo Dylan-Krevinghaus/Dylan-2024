@@ -16,18 +16,26 @@ public class MainTest{
         switch(index)
         {
             case 1:
+                System.out.println("");
+                switch(index)
+                {   
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                }
             case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-            case 10:
+                System.out.println("");
+                switch(index)
+                {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                }
         }
         //does not work
-        Scanner.close(kbd);
+        kbd.close();
         System.exit(0);
     }
 }
