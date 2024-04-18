@@ -3,28 +3,13 @@ import java.util.Scanner;
 public class SpaceshipAdministrator
 {
     ArrayList<String> shipName = new ArrayList<String>();
-    String newShipName;
-    String removeShipName;
-    String verifyString;
-    String inputForChange;
-    String shipCheck;
-    String removeYesOrNo;
+    String newShipName, removeShipName, verifyString, inputForChange, shipCheck, removeYesOrNo;
     ArrayList<Integer> shipFuel = new ArrayList<Integer>();
     ArrayList<Integer> fuelCapacity = new ArrayList<Integer>();
+    ArrayList<Integer> crewNumb = new ArrayList<Integer>();
     ArrayList<Integer> crewCapacity = new ArrayList<Integer>();
-    int newFuel;
-    int fixedShipFuel;
-    int newFuelCap;
-    int newCrewCap;
-    int whileFIX;
-    int removeFuel;
-    int removeCrewCap;
-    int changeSwitch;
-    int addingSwitch;
-    int removingSwitch;
-    int inputForInt;
-    int i = 0;
-    int a = 0;
+    int newFuel, fixedShipFuel, newFuelCap, newCrewNumbs, newCrewCap, whileFIX, removeFuel, removeCrewCap, changeSwitch, addingSwitch, removingSwitch, inputForInt;
+    int i = 0, a = 0;
     boolean vailidity;
     Scanner kbd = new Scanner(System.in);
 //Constructor//
@@ -37,10 +22,14 @@ public class SpaceshipAdministrator
         }
     public SpaceshipAdministrator()
     {
+    }
+////operation for everything////
+    public void switchSpaceshipInfo()
+    {
         whileFIX = 0;
         while(whileFIX == 0)
         {
-            System.out.println("Please enter the number that correlates with the action. /n 1. add /n 2. remove /n 3. change /n 4. exit");
+            System.out.println("Please enter the number that correlates with the action. \n1. add \n2. remove \n3. change \n4. exit");
             verifyString = kbd.nextLine();
             try
             {
@@ -59,10 +48,6 @@ public class SpaceshipAdministrator
         {
             switchSpaceshipInfo();
         }
-    }
-////operation for everything////
-    public void switchSpaceshipInfo()
-    {
         switch (changeSwitch)
         {
 ////Add////
@@ -70,7 +55,7 @@ public class SpaceshipAdministrator
             whileFIX = 0;
                 while(whileFIX == 0)
                 {
-                    System.out.println("Please enter the number that correlates with the following: /n 1. Name /n 2. Fuel /n 3. Fuel Capacity /n 4. Crew Capacity");
+                    System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. Fuel \n3. Fuel Capacity \n4. Crew Numbers \n5. Crew Capacity");
                     verifyString= kbd.nextLine();
                     try
                     {
@@ -138,7 +123,7 @@ public class SpaceshipAdministrator
                         whileFIX = 0;
                         while(whileFIX == 0)
                         {
-                            System.out.println("Enter the amount of fuel that you want to add: ");
+                            System.out.println("Enter the amount of fuel that you want to add: (Note: Fuel must be max in order to launch)");
                             newFuel = kbd.nextInt();
                             kbd.nextLine();
                             if(a == 1)
@@ -185,8 +170,46 @@ public class SpaceshipAdministrator
                                 whileFIX = 1;
                             }
                         }
-//Add Crew Capacity
+//Add Crew Memebers
                     case 4:
+                        whileFIX = 0;
+                        a = 0;
+                        while(whileFIX == 0)
+                        {
+                            System.out.println(shipName);
+                            System.out.println("What ship does this corrolate to?");
+                            shipCheck = kbd.nextLine();
+                            for(i = 0; i < shipName.size(); i++)
+                            {
+                                if(shipCheck == shipName.get(i))
+                                {
+                                    a = 1;
+                                    break;
+                                }
+                            }
+                            if(a == 1)
+                            {
+                                whileFIX = 1;
+                            }
+                            else
+                            {
+                                System.out.println("Your entry was not a ship name.");
+                            }
+                        }
+                        whileFIX = 0;
+                        while(whileFIX == 0)
+                        {
+                            System.out.println("Enter the crew amount that you want to add: (Note: Crew numbers must be max in order to launch)");
+                            newCrewNumbs = kbd.nextInt();
+                            kbd.nextLine();
+                            if(a == 1)
+                            {
+                                crewNumb.add(i, newCrewNumbs);
+                                whileFIX = 1;
+                            }
+                        }
+//Add Crew Capacity
+                    case 5:
                         whileFIX = 0;
                         a = 0;
                         while(whileFIX == 0)
@@ -229,7 +252,7 @@ public class SpaceshipAdministrator
                 whileFIX = 0;
                 while(whileFIX == 0)
                 {
-                    System.out.println("Please enter the number that correlates with the following: /n 1. Name /n 2. Fuel /n 3. Fuel Capacity /n 4. Crew Capacity");
+                    System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. Fuel \n3. Fuel Capacity \n4. Crew Numbers \n5. Crew Capacity");
                     verifyString= kbd.nextLine();
                     try
                     {
@@ -364,8 +387,35 @@ public class SpaceshipAdministrator
                             }
                         }
                         fuelCapacity.remove(i);
-//Remove Crew Capacity
+//Remove Crew Members
                     case 4:
+                        whileFIX = 0;
+                        a = 0;
+                        while(whileFIX == 0)
+                        {
+                            System.out.println(shipName);
+                            System.out.println("Please enter the ship's name in order to remove the fuel capacity.");
+                            shipCheck = kbd.nextLine();
+                            for(i = 0; i < shipName.size(); i++)
+                            {
+                                if(shipCheck == shipName.get(i))
+                                {
+                                    a = 1;
+                                    break;
+                                }
+                            }
+                            if(a == 1)
+                            {
+                                whileFIX = 1;
+                            }
+                            else
+                            {
+                                System.out.println("Your entry was not a ship name.");
+                            }
+                        }
+                        crewNumb.remove(i);
+//Remove Crew Capacity
+                    case 5:
                         whileFIX = 0;
                         a = 0;
                         while(whileFIX == 0)
@@ -397,7 +447,7 @@ public class SpaceshipAdministrator
                 whileFIX = 0;
                 while(whileFIX == 0)
                 {
-                    System.out.println("Please enter the number that correlates with the following: /n 1. Name /n 2. Fuel /n 3. Fuel Capacity /n 4. Crew Capacity");
+                    System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. Fuel \n3. Fuel Capacity \n4. Crew Capacity");
                     verifyString = kbd.nextLine();
                     try
                     {
@@ -448,7 +498,7 @@ public class SpaceshipAdministrator
                         }
 //Change Fuel Capacity
                     case 3:
-                        System.out.println(shipFuel);
+                        System.out.println(fuelCapacity);
                         System.out.println("Enter the fuel capacity you would like to change.");
                         inputForInt = kbd.nextInt();
                         kbd.nextLine();
@@ -465,7 +515,7 @@ public class SpaceshipAdministrator
                         }
 //Change Crew Capacity
                     case 4:
-                        System.out.println(shipFuel);
+                        System.out.println(crewCapacity);
                         System.out.println("Enter the crew capacity you would like to change.");
                         inputForInt = kbd.nextInt();
                         kbd.nextLine();

@@ -6,28 +6,10 @@ public class AstronautAdministrator
     ArrayList<String> skills = new ArrayList<String>();
     ArrayList<String> address = new ArrayList<String>();
     ArrayList<String> passwordArray = new ArrayList<String>();
-    String newName;
-    String newSkills;
-    String newAddress;
-    String password;
-    String inputForChange;
-    String verifyString;
-    String removeName;
-    String removeSkills;
-    String removeAddress;
+    String newName, newSkills, newAddress, password, inputForChange, verifyString, removeName, removeSkills, removeAddress;
     ArrayList<Integer> id = new ArrayList<Integer>();
     ArrayList<Integer> amountOfFamily = new ArrayList<Integer>();
-    int inputForInt;
-    int idInput;
-    int addingSwitch = 0;
-    int removingSwitch = 0;
-    int changeSwitch = 0;
-    int removeID;
-    int removeAmountOfFam;
-    int whileFIX = 0;
-    int newID;
-    int newAmountOfFam;
-    int i;
+    int inputForInt, idInput, addingSwitch = 0, removingSwitch = 0, changeSwitch = 0, removeID, removeAmountOfFam, whileFIX = 0, newID, newAmountOfFam, i;
     Scanner kbd = new Scanner(System.in);
 //Choosing add, remove, or change.
 //Along with what they want to change.
@@ -42,10 +24,14 @@ public class AstronautAdministrator
     }
     public AstronautAdministrator()
     {
+    }
+//operation for everything
+    public void switchAstronautInfo()
+    {
         whileFIX = 0;
         while(whileFIX == 0)
         {
-            System.out.println("Please enter the number that correlates with the action. /n 1. add /n 2. remove /n 3. change /n 4. exit");
+            System.out.println("Please enter the number that correlates with the action. \n1. add \n2. remove \n3. change \n4. exit");
             verifyString = kbd.nextLine();
             try
             {
@@ -64,10 +50,6 @@ public class AstronautAdministrator
         {
             switchAstronautInfo();
         }
-    }
-//operation for everything
-    public void switchAstronautInfo()
-    {
         switch (changeSwitch)
         {
 ////Add////
@@ -75,7 +57,7 @@ public class AstronautAdministrator
             whileFIX = 0;
                 while(whileFIX == 0)
                 {
-                    System.out.println("Please enter the number that correlates with the following: /n 1. Name /n 2. ID /n 3. Skills /n 4. Address /n 5. Family numbers");
+                    System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. ID \n3. Skills \n4. Address \n5. Family numbers");
                     verifyString= kbd.nextLine();
                     try
                     {
@@ -124,7 +106,7 @@ public class AstronautAdministrator
             whileFIX = 0;
                 while(whileFIX == 0)
                 {
-                    System.out.println("Please enter the number that correlates with the following: /n 1. Name /n 2. ID /n 3. Skills /n 4. Address /n 5. Family numbers");
+                    System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. ID \n3. Skills \n4. Address \n5. Family numbers");
                     verifyString= kbd.nextLine();
                     try
                     {
@@ -209,7 +191,7 @@ public class AstronautAdministrator
             whileFIX = 0;
                 while(whileFIX == 0)
                 {
-                    System.out.println("Please enter the number that correlates with the following: /n 1. Name /n 2. ID /n 3. Skills /n 4. Address /n 5. Password");
+                    System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. ID \n3. Skills \n4. Address \n5. Password");
                     verifyString = kbd.nextLine();
                     try
                     {

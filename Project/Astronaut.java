@@ -11,7 +11,9 @@ public class Astronaut extends AstronautAdministrator
     private int amountOfFamily;
     
     // Makes the variables a little more easy to access inside the get and set methods
-    
+    public Astronaut()
+    {
+    }
     public Astronaut(String name, String skills, String address, String password, int id, int amountOfFamily)
     {
        this.name = name;
