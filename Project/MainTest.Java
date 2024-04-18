@@ -3,6 +3,7 @@ public class MainTest{
     public static void main(String[] args)
     {
         String conformation;
+        String passwordCheck;
         int whileFIX;
         int a = 0;
         Astronaut astro = new Astronaut();
@@ -10,8 +11,27 @@ public class MainTest{
         Spaceship ship = new Spaceship();
         SpaceshipAdministrator shipAdmin = new SpaceshipAdministrator();
         Launch launchAttempt = new Launch();
+        Security safty = new Security();
         int index;
         Scanner kbd = new Scanner(System.in);
+        whileFIX = 0;
+        while(whileFIX == 0)
+        {
+            if(safty.firstTime())
+            {
+                System.out.println("New here I see, this will be your password: \n" + safty.generatePassword() + "\n DO NOT FORGET THIS PASSWORD");
+            }
+            System.out.println("Enter your password: ");
+            passwordCheck = kbd.nextLine();
+            if(safty.checkPassword(passwordCheck))
+            {
+                whileFIX = 1;
+            }
+            else
+            {
+                System.out.println("Wrong password. Try again!");
+            }
+        }
         whileFIX = 0;
         while(whileFIX == 0)
         {
