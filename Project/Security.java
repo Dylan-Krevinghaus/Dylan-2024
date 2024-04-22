@@ -8,9 +8,13 @@ public class Security {
     public boolean firstTime()
     {
         //check if it is the first time the user entered
-        catch(RecordHeaderName ex)
+        try
         {
-            ex.
+            
+        }
+        catch(Exception ex)
+        {
+            ex.getMessage();
         }
     }
     public String generatePassword()
