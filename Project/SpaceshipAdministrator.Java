@@ -94,6 +94,7 @@ public class SpaceshipAdministrator
                                     whileFIX = 1;
                                 }
                         }
+                        break;
 //Add Fuel
                     case 2:
                         whileFIX = 0;
@@ -132,6 +133,7 @@ public class SpaceshipAdministrator
                                 whileFIX = 1;
                             }
                         }
+                        break;
 //Add Fuel Capacity
                     case 3:
                         whileFIX = 0;
@@ -170,6 +172,7 @@ public class SpaceshipAdministrator
                                 whileFIX = 1;
                             }
                         }
+                        break;
 //Add Crew Memebers
                     case 4:
                         whileFIX = 0;
@@ -208,6 +211,7 @@ public class SpaceshipAdministrator
                                 whileFIX = 1;
                             }
                         }
+                        break;
 //Add Crew Capacity
                     case 5:
                         whileFIX = 0;
@@ -246,7 +250,9 @@ public class SpaceshipAdministrator
                                 whileFIX = 1;
                             }
                         }
+                        break;
                 }
+                break;
 ////Remove////
             case 2:
                 whileFIX = 0;
@@ -296,6 +302,7 @@ public class SpaceshipAdministrator
                                 System.out.println("Your entry was not a ship name.");
                             }
                         }
+                        break;
 //Remove Fuel
                     case 2:
                         whileFIX = 0;
@@ -360,6 +367,7 @@ public class SpaceshipAdministrator
                                 }
                             }
                         }
+                        break;
 //Remove Fuel Capacity
                     case 3:
                         whileFIX = 0;
@@ -387,6 +395,7 @@ public class SpaceshipAdministrator
                             }
                         }
                         fuelCapacity.remove(i);
+                        break;
 //Remove Crew Members
                     case 4:
                         whileFIX = 0;
@@ -414,6 +423,7 @@ public class SpaceshipAdministrator
                             }
                         }
                         crewNumb.remove(i);
+                        break;
 //Remove Crew Capacity
                     case 5:
                         whileFIX = 0;
@@ -441,7 +451,9 @@ public class SpaceshipAdministrator
                             }
                         }
                         crewCapacity.remove(i);
+                        break;
                     }
+                    break;
 ////Change////
             case 3:
                 whileFIX = 0;
@@ -479,6 +491,7 @@ public class SpaceshipAdministrator
                                 shipName.add(i, inputForChange);
                             }
                         }
+                        break;
 //Change Fuel
                     case 2:
                         System.out.println(shipFuel);
@@ -496,6 +509,7 @@ public class SpaceshipAdministrator
                                 shipFuel.add(i, inputForInt);
                             }
                         }
+                        break;
 //Change Fuel Capacity
                     case 3:
                         System.out.println(fuelCapacity);
@@ -513,6 +527,7 @@ public class SpaceshipAdministrator
                                 fuelCapacity.add(i, inputForInt);
                             }
                         }
+                        break;
 //Change Crew Capacity
                     case 4:
                         System.out.println(crewCapacity);
@@ -530,7 +545,9 @@ public class SpaceshipAdministrator
                                 crewCapacity.add(i, inputForInt);
                             }
                         }
+                        break;
                 }
+                break;
         }
     }
 }

@@ -79,28 +79,34 @@ public class AstronautAdministrator
                         System.out.println("Type the name that you want to add: ");
                         newName = kbd.nextLine();
                         name.add(newName);
+                        break;
 //Add ID
                     case 2:
                         System.out.println("Type the ID that you want to add: ");
                         newID = kbd.nextInt();
                         kbd.nextLine();
                         id.add(newID);
+                        break;
 //Add Skills
                     case 3:
                         System.out.println("Type the skills that you want to add: ");
                         newSkills = kbd.nextLine();
                         skills.add(newSkills);
+                        break;
 //Add Address
                     case 4:
                         System.out.println("Type the address that you want to add: ");
                         newAddress = kbd.nextLine();
                         address.add(newAddress);
+                        break;
 //Add Family numbers
                     case 5:
                         System.out.println("Type the amount of family that you want to add: ");
                         newAmountOfFam = kbd.nextInt();
                         amountOfFamily.add(newAmountOfFam);
+                        break;
                 }
+                break;
 ////Remove////
             case 2:
             whileFIX = 0;
@@ -135,6 +141,7 @@ public class AstronautAdministrator
                                 name.remove(i);
                             }
                         }
+                        break;
 //Remove ID
                     case 2:
                         System.out.println("Please type in the exact ID you would like to remove");
@@ -148,6 +155,7 @@ public class AstronautAdministrator
                                     id.remove(i);
                                 }
                             }
+                            break;
 //Remove Skills
                     case 3:
                         System.out.println("Please type in the exact skills you would like to remove");
@@ -160,6 +168,7 @@ public class AstronautAdministrator
                                     skills.remove(i);
                                 }
                             }
+                            break;
 //Remove Address
                     case 4:
                         System.out.println("Please type in the exact address you would like to remove");
@@ -172,6 +181,7 @@ public class AstronautAdministrator
                                     address.remove(i);
                                 }
                             }
+                            break;
 //Remove Family Numbers
                     case 5:
                         System.out.println("Please type in the exact family number you would like to remove");
@@ -185,7 +195,9 @@ public class AstronautAdministrator
                                     amountOfFamily.remove(i);
                                 }
                             }
+                            break;
                 }
+                break;
 ////Change////
             case 3:
             whileFIX = 0;
@@ -223,6 +235,7 @@ public class AstronautAdministrator
                                 name.add(inputForChange);
                             }
                         }
+                        break;
 //Change ID
                     case 2:
                         System.out.println(id);
@@ -239,6 +252,7 @@ public class AstronautAdministrator
                                 id.add(inputForInt);
                             }
                         }
+                        break;
 //Change Skills
                     case 3:
                         System.out.println(skills);
@@ -254,6 +268,7 @@ public class AstronautAdministrator
                                 skills.add(inputForChange);
                             }
                         }
+                        break;
 //Change Address
                     case 4:
                         System.out.println(address);
@@ -269,6 +284,7 @@ public class AstronautAdministrator
                                 address.add(inputForChange);
                             }
                         }
+                        break;
 //Change Password
                     case 5:
                         System.out.println("Enter the password you would like to change.");
@@ -283,7 +299,9 @@ public class AstronautAdministrator
                                 passwordArray.add(inputForChange);
                             }
                         }
+                        break;
                 }
+                break;
         }
     }
 }

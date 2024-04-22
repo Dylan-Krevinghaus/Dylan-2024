@@ -4,6 +4,7 @@ public class MainTest{
     {
         String conformation;
         String passwordCheck;
+        String passwordStore;
         int whileFIX;
         int a = 0;
         Astronaut astro = new Astronaut();
@@ -15,12 +16,15 @@ public class MainTest{
         int index;
         Scanner kbd = new Scanner(System.in);
         whileFIX = 0;
-        while(whileFIX == 0)
-        {
+        
             if(safty.firstTime())
             {
-                System.out.println("New here I see, this will be your password: \n" + safty.generatePassword() + "\n DO NOT FORGET THIS PASSWORD");
+                passwordStore = safty.generatePassword();
+                System.out.println("New here I see, this will be your password: \n" + passwordStore + "\nDO NOT FORGET THIS PASSWORD");
+                safty.store(passwordStore);
             }
+        while(whileFIX == 0)
+        {
             System.out.println("Enter your password: ");
             passwordCheck = kbd.nextLine();
             if(safty.checkPassword(passwordCheck))
@@ -35,24 +39,25 @@ public class MainTest{
         whileFIX = 0;
         while(whileFIX == 0)
         {
-            System.out.println("Welcome to our system! \nPlease enter: \n'1' for all astronaut info \n'2' for astronaut admin \n'3' for all spaceship info \n'4' for spaceship admin \n'5' to attemt to launch \n'6' to log off.");
+            System.out.println("Welcome to our system! \nPlease enter: \n'1' for all astronaut info \n'2' for astronaut admin \n'3' for all spaceship info \n'4' for spaceship admin \n'5' to attempt to launch \n'6' to log off.");
             index = kbd.nextInt();
             kbd.nextLine();
             switch(index)
             {
                 case 1:
                     System.out.println("Name: \n" + astro.getName() + "\nSkills: \n" + astro.getSkills() + "\nAddress: \n" + astro.getAddress() + "\nID: \n" + astro.getID() + "\nAmount of family: \n" + astro.getFamilyNumbers());
+                    break;
                 case 2:
                     whileFIX = 0;
                     while(whileFIX == 0)
                     {
                         System.out.println("Are you sure you want edit astronaut info? 'yes' or 'no'");
                         conformation = kbd.nextLine();
-                        if(conformation == "yes")
+                        if(conformation.equals("yes"))
                         {
                             astroAdmin.switchAstronautInfo();
                         }
-                        else if(conformation == "no")
+                        else if(conformation.equals("no"))
                         {
                             whileFIX = 1;
                         }
@@ -60,10 +65,16 @@ public class MainTest{
                         {
                             System.out.println("Your entry was invalid. Please try again.");
                         }
+                        if(astro.verifyString == 4)
+                        {
+                            whileFIX = 1;
+                        }
                     }
                     whileFIX = 0;
+                    break;
                 case 3:
                     System.out.println("Name: \n" + ship.getShipName() + "\nFuel: \n" + ship.getShipFuel() + "\nFuel Capacity: \n" + ship.getFuelCap() + "\nCrew Capacity: \n" + ship.getCrewCap());
+                    break;
                 case 4:
                     whileFIX = 0;
                     while(whileFIX == 0)
@@ -84,6 +95,7 @@ public class MainTest{
                         }
                     }
                     whileFIX = 0;
+                    break;
                 case 5:
                     whileFIX = 0;
                     while(whileFIX == 0)
@@ -111,6 +123,7 @@ public class MainTest{
                         }
                     }
                     whileFIX = 0;
+                    break;
                 case 6:
                     a = 0;
                     whileFIX = 0;
@@ -135,6 +148,7 @@ public class MainTest{
                     {
                         whileFIX = 0;
                     }
+                    break;
             }
         }
         //does not work
