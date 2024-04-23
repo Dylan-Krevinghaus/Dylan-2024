@@ -31,15 +31,12 @@ public class SpaceshipAdministrator
         {
             System.out.println("Please enter the number that correlates with the action. \n1. add \n2. remove \n3. change \n4. exit");
             verifyString = kbd.nextLine();
-            try
+            changeSwitch = Integer.parseInt(verifyString);
+            if(changeSwitch > 0 && changeSwitch < 5)
             {
-                changeSwitch = Integer.parseInt(verifyString);
-                if(changeSwitch > 0 && changeSwitch < 5)
-                {
-                    whileFIX = 1;
-                }
+                whileFIX = 1;
             }
-            catch(InputMismatchException e)
+            else
             {
                 System.out.println("Not a valid input.");
             }
@@ -57,15 +54,12 @@ public class SpaceshipAdministrator
                 {
                     System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. Fuel \n3. Fuel Capacity \n4. Crew Numbers \n5. Crew Capacity");
                     verifyString= kbd.nextLine();
-                    try
+                    changeSwitch = Integer.parseInt(verifyString);
+                    if(changeSwitch > 0 && changeSwitch < 5)
                     {
-                        addingSwitch = Integer.parseInt(verifyString);
-                        if(addingSwitch > 0 && addingSwitch < 5)
-                        {
-                            whileFIX = 1;
-                        }
+                        whileFIX = 1;
                     }
-                    catch(InputMismatchException e)
+                    else
                     {
                         System.out.println("Not a valid input.");
                     }
@@ -260,15 +254,12 @@ public class SpaceshipAdministrator
                 {
                     System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. Fuel \n3. Fuel Capacity \n4. Crew Numbers \n5. Crew Capacity");
                     verifyString= kbd.nextLine();
-                    try
+                    changeSwitch = Integer.parseInt(verifyString);
+                    if(changeSwitch > 0 && changeSwitch < 5)
                     {
-                        removingSwitch = Integer.parseInt(verifyString);
-                        if(removingSwitch > 0 && removingSwitch < 5)
-                        {
-                            whileFIX = 1;
-                        }
+                        whileFIX = 1;
                     }
-                    catch(InputMismatchException e)
+                    else
                     {
                         System.out.println("Not a valid input.");
                     }
@@ -461,15 +452,12 @@ public class SpaceshipAdministrator
                 {
                     System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. Fuel \n3. Fuel Capacity \n4. Crew Capacity");
                     verifyString = kbd.nextLine();
-                    try
+                    changeSwitch = Integer.parseInt(verifyString);
+                    if(changeSwitch > 0 && changeSwitch < 5)
                     {
-                        changeSwitch = Integer.parseInt(verifyString);
-                        if(changeSwitch > 0 && changeSwitch < 5)
-                        {
-                            whileFIX = 1;
-                        }
+                        whileFIX = 1;
                     }
-                    catch(InputMismatchException e)
+                    else
                     {
                         System.out.println("Not a valid input.");
                     }

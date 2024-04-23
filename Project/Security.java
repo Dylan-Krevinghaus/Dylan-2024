@@ -1,11 +1,12 @@
+import java.util.*;
 import java.io.BufferedReader;
-import java.util.ArrayList;
 import java.io.FileReader;
 
 public class Security {
     String password;
     String currentLine;
     String file = "ReadingThings";
+    Random rand = new Random();
     ArrayList<String> passwordHolder = new ArrayList<String>();
     int whileFIX;
     int i;
@@ -35,7 +36,23 @@ public class Security {
     {
         //Make 5 lower case and 5 upper case
         //Make it start and end with a single digit number
-        return "a";
+        int numToLet;
+        char letterGEN;
+        String lettergen;
+        String pass = "";
+        int passlength = rand.nextInt(5) + 5;
+        for(i = 0; i < passlength; i++)
+        {
+            numToLet = rand.nextInt(26) + 65;
+            letterGEN = (char)numToLet;
+            lettergen = Character.toString(letterGEN);
+            if(rand.nextInt(2) == 1)
+            {
+                lettergen = lettergen.toLowerCase();
+            }
+            pass = pass + lettergen;
+        }
+        return pass;
     }
 
 

@@ -16,13 +16,13 @@ public class MainTest{
         int index;
         Scanner kbd = new Scanner(System.in);
         whileFIX = 0;
-        
-            if(safty.firstTime())
-            {
-                passwordStore = safty.generatePassword();
-                System.out.println("New here I see, this will be your password: \n" + passwordStore + "\nDO NOT FORGET THIS PASSWORD");
-                safty.store(passwordStore);
-            }
+        System.out.println("Welcome to our system!");
+        if(safty.firstTime())
+        {
+            passwordStore = safty.generatePassword();
+            System.out.println("New here I see, this will be your password: \n" + passwordStore + "\nDO NOT FORGET THIS PASSWORD");
+            safty.store(passwordStore);
+        }
         while(whileFIX == 0)
         {
             System.out.println("Enter your password: ");
@@ -39,7 +39,7 @@ public class MainTest{
         whileFIX = 0;
         while(whileFIX == 0)
         {
-            System.out.println("Welcome to our system! \nPlease enter: \n'1' for all astronaut info \n'2' for astronaut admin \n'3' for all spaceship info \n'4' for spaceship admin \n'5' to attempt to launch \n'6' to log off.");
+            System.out.println("Please enter: \n'1' for all astronaut info \n'2' for astronaut admin \n'3' for all spaceship info \n'4' for spaceship admin \n'5' to attempt to launch \n'6' to log off.");
             index = kbd.nextInt();
             kbd.nextLine();
             switch(index)
@@ -55,7 +55,12 @@ public class MainTest{
                         conformation = kbd.nextLine();
                         if(conformation.equals("yes"))
                         {
-                            astroAdmin.switchAstronautInfo();
+                            System.out.println("Enter your password.");
+                            passwordCheck = kbd.nextLine();
+                            if(safty.checkPassword(passwordCheck))
+                            {
+                                astroAdmin.switchAstronautInfo();
+                            }
                         }
                         else if(conformation.equals("no"))
                         {
@@ -65,7 +70,7 @@ public class MainTest{
                         {
                             System.out.println("Your entry was invalid. Please try again.");
                         }
-                        if(astro.verifyString == 4)
+                        if(astroAdmin.adminFIX == 4)
                         {
                             whileFIX = 1;
                         }
@@ -81,11 +86,16 @@ public class MainTest{
                     {
                         System.out.println("Are you sure you want edit spaceship info? 'yes' or 'no'");
                         conformation = kbd.nextLine();
-                        if(conformation == "yes")
+                        if(conformation.equals("yes"))
                         {
-                            shipAdmin.switchSpaceshipInfo();
+                            System.out.println("Enter your password.");
+                            passwordCheck = kbd.nextLine();
+                            if(safty.checkPassword(passwordCheck))
+                            {
+                                shipAdmin.switchSpaceshipInfo();
+                            }
                         }
-                        else if(conformation == "no")
+                        else if(conformation.equals("no"))
                         {
                             whileFIX = 1;
                         }
@@ -102,7 +112,7 @@ public class MainTest{
                     {
                         System.out.println("Are you sure you want launch? 'yes' or 'no'");
                         conformation = kbd.nextLine();
-                        if(conformation == "yes")
+                        if(conformation.equals("yes"))
                         {
                             if(launchAttempt.takeOFF())
                             {
@@ -113,7 +123,7 @@ public class MainTest{
                                 System.out.println("Try again.");
                             }
                         }
-                        else if(conformation == "no")
+                        else if(conformation.equals("no"))
                         {
                             whileFIX = 1;
                         }
@@ -131,11 +141,11 @@ public class MainTest{
                     {
                         System.out.println("Are you sure you want log off? 'yes' or 'no'");
                         conformation = kbd.nextLine();
-                        if(conformation == "yes")
+                        if(conformation.equals("yes"))
                         {
                             whileFIX = 1;
                         }
-                        else if(conformation == "no")
+                        else if(conformation.equals("no"))
                         {
                             a = 1;
                         }
@@ -151,7 +161,7 @@ public class MainTest{
                     break;
             }
         }
-        //does not work
+        System.out.println("Closing program.");
         kbd.close();
         System.exit(0);
     }
