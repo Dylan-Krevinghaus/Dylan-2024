@@ -1,19 +1,26 @@
 import java.util.*;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Security {
     String password;
+    String newPassword = "";
     String currentLine;
     String file = "ReadingThings";
+    String letter;
+    char betterLetter;
     Random rand = new Random();
     ArrayList<String> passwordHolder = new ArrayList<String>();
     int whileFIX;
+    int ascii;
     int i;
     int a = 0;
 
 
-    public boolean firstTime()
+    public boolean firstTime() throws IOException
     {
         //check if it is the first time the user entered
         try(BufferedReader reader = new BufferedReader(new FileReader(file)))
@@ -24,7 +31,7 @@ public class Security {
                     return true;
                 }
         }
-        catch(Exception ex)
+        catch(IOException ex)
         {
             ex.getMessage();
         }
@@ -34,8 +41,6 @@ public class Security {
 
     public String generatePassword()
     {
-        //Make 5 lower case and 5 upper case
-        //Make it start and end with a single digit number
         int numToLet;
         char letterGEN;
         String lettergen;
@@ -58,9 +63,18 @@ public class Security {
 
     public boolean checkPassword(String password)
     {
+        newPassword = "";
+        for(int i = 0; i < password.length(); i++){
+            betterLetter = password.charAt(i);
+            ascii = (int) betterLetter - 10;
+            betterLetter = (char) ascii;
+            letter = String.valueOf(betterLetter);
+            newPassword += letter;
+          }
         for(i = 0; i < passwordHolder.size(); i++)
         {
-            if(password.equals(passwordHolder.get(i)))
+            System.out.println(newPassword);///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            if(newPassword.equals(passwordHolder.get(i)))
             {
                 return true;
             }
@@ -69,21 +83,38 @@ public class Security {
     }
 
 
-    public void store(String password)
+    public void store(String password) throws IOException
     {
         //Store the password for login later
         i = 0;
+        newPassword = "";
+        for(int i = 0; i < password.length(); i++)
+        {
+            betterLetter = password.charAt(i);
+            ascii = (int) betterLetter + 10;
+            betterLetter = (char) ascii;
+            letter = String.valueOf(betterLetter);
+            newPassword += letter;
+        }
         while(passwordHolder.size() != 0)
         {
             if(passwordHolder.get(i) == null)
             {
-                passwordHolder.add(password);
+                passwordHolder.add(newPassword);
             }
             i++;
         }
         if(passwordHolder.size() == 0)
         {
-            passwordHolder.add(password);
+            passwordHolder.add(newPassword);
+        }
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(file)))
+        {
+            writer.write(newPassword);
+        }
+        catch(Exception ex)
+        {
+            System.out.println(ex.getMessage());
         }
     }
 }

@@ -9,7 +9,7 @@ public class AstronautAdministrator
     String newName, newSkills, newAddress, password, inputForChange, verifyString, removeName, removeSkills, removeAddress;
     ArrayList<Integer> id = new ArrayList<Integer>();
     ArrayList<Integer> amountOfFamily = new ArrayList<Integer>();
-    int inputForInt, idInput, addingSwitch = 0, removingSwitch = 0, changeSwitch = 0, removeID, removeAmountOfFam, whileFIX = 0, newID, newAmountOfFam, i, adminFIX, stringTOint;
+    int inputForInt, idInput, addingSwitch = 0, removingSwitch = 0, changeSwitch = 0, removeID, removeAmountOfFam, whileFIX = 0, newID, newAmountOfFam, i, adminFIX;
     Scanner kbd = new Scanner(System.in);
 //Choosing add, remove, or change.
 //Along with what they want to change.
@@ -38,6 +38,7 @@ public class AstronautAdministrator
                 verifyString = kbd.nextLine();
                 if(possibleINTEGER(verifyString))
                 {
+                    changeSwitch = Integer.parseInt(verifyString);
                     if(changeSwitch > 0 && changeSwitch < 5)
                     {
                         whileFIX = 1;
@@ -46,12 +47,6 @@ public class AstronautAdministrator
                     {
                         System.out.println("Not a valid input.");
                     }
-                }
-//if verift String is already number make this thing work 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                else if(changeSwitch > 0 && changeSwitch < 5)
-                {
-                    whileFIX = 1;
                 }
                 else
                 {
@@ -71,18 +66,16 @@ public class AstronautAdministrator
                             verifyString = kbd.nextLine();
                             if(possibleINTEGER(verifyString))
                             {
+                                changeSwitch = Integer.parseInt(verifyString);
                                 if(changeSwitch > 0 && changeSwitch < 7)
                                 {
+                                    addingSwitch = changeSwitch;
                                     whileFIX = 1;
                                 }
                                 else
                                 {
                                     System.out.println("Not a valid input.");
                                 }
-                            }
-                            else if(changeSwitch > 0 && changeSwitch < 7)
-                            {
-                                whileFIX = 1;
                             }
                             else
                             {
@@ -130,16 +123,17 @@ public class AstronautAdministrator
                         break;
 ////Remove////
                     case 2:
-                    whileFIX = 0;
+                        whileFIX = 0;
                         while(whileFIX == 0)
                         {
                             System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. ID \n3. Skills \n4. Address \n5. Family numbers \n6. Exit");
                             verifyString= kbd.nextLine();                            
-                            verifyString = kbd.nextLine();
                             if(possibleINTEGER(verifyString))
                             {
+                                changeSwitch = Integer.parseInt(verifyString);
                                 if(changeSwitch > 0 && changeSwitch < 7)
                                 {
+                                    removingSwitch = changeSwitch;
                                     whileFIX = 1;
                                 }
                                 else
@@ -147,17 +141,13 @@ public class AstronautAdministrator
                                     System.out.println("Not a valid input.");
                                 }
                             }
-                            else if(changeSwitch > 0 && changeSwitch < 7)
-                            {
-                                whileFIX = 1;
-                            }
                             else
                             {
                                 System.out.println("Not a valid input.");
                             }
                         }
                         whileFIX = 0;
-                        switch (addingSwitch)
+                        switch (removingSwitch)
                         {
 //Remove Name
                             case 1:
@@ -240,18 +230,16 @@ public class AstronautAdministrator
                             verifyString = kbd.nextLine();
                             if(possibleINTEGER(verifyString))
                             {
+                                changeSwitch = Integer.parseInt(verifyString);
                                 if(changeSwitch > 0 && changeSwitch < 7)
                                 {
+                                    //changeSwitch = changeSwitch
                                     whileFIX = 1;
                                 }
                                 else
                                 {
                                     System.out.println("Not a valid input.");
                                 }
-                            }
-                            else if(changeSwitch > 0 && changeSwitch < 7)
-                            {
-                                whileFIX = 1;
                             }
                             else
                             {
@@ -266,16 +254,22 @@ public class AstronautAdministrator
                                 System.out.println(name);
                                 System.out.println("Enter the name you would like to change.");
                                 inputForChange = kbd.nextLine();
-                                for(i = 0; i < name.size(); i++)
+                                whileFIX = 0;
+                                while(whileFIX == 0)
                                 {
-                                    if(name.get(i) == inputForChange)
+                                    for(i = 0; i < name.size(); i++)
                                     {
-                                        name.remove(inputForChange);
-                                        System.out.println("Enter new name: ");
-                                        inputForChange = kbd.nextLine();
-                                        name.add(inputForChange);
+                                        if(name.get(i) == inputForChange)
+                                        {
+                                            name.remove(inputForChange);
+                                            System.out.println("Enter new name: ");
+                                            inputForChange = kbd.nextLine();
+                                            name.add(inputForChange);
+                                            whileFIX = 1;
+                                        }
                                     }
                                 }
+                                whileFIX = 0;
                                 break;
 //Change ID
                             case 2:
@@ -283,63 +277,87 @@ public class AstronautAdministrator
                                 System.out.println("Enter the ID you would like to change.");
                                 idInput = kbd.nextInt();
                                 kbd.nextLine();
-                                for(i = 0; i < id.size(); i++)
+                                whileFIX = 0;
+                                while(whileFIX == 0)
                                 {
-                                    if(id.get(i) == idInput)
+                                    for(i = 0; i < id.size(); i++)
                                     {
-                                        id.remove(idInput);
-                                        System.out.println("Enter new name: ");
-                                        inputForInt = kbd.nextInt();
-                                        id.add(inputForInt);
+                                        if(id.get(i) == idInput)
+                                        {
+                                            id.remove(idInput);
+                                            System.out.println("Enter new name: ");
+                                            inputForInt = kbd.nextInt();
+                                            id.add(inputForInt);
+                                            whileFIX = 1;
+                                        }
                                     }
                                 }
+                                whileFIX = 0;
                                 break;
 //Change Skills
                             case 3:
                                 System.out.println(skills);
                                 System.out.println("Enter the skills you would like to change.");
                                 inputForChange = kbd.nextLine();
-                                for(i = 0; i < skills.size(); i++)
+                                whileFIX = 0;
+                                while(whileFIX == 0)
                                 {
-                                    if(skills.get(i) == inputForChange)
+                                    for(i = 0; i < skills.size(); i++)
                                     {
-                                        skills.remove(inputForChange);
-                                        System.out.println("Enter new name: ");
-                                        inputForChange = kbd.nextLine();
-                                        skills.add(inputForChange);
+                                        if(skills.get(i) == inputForChange)
+                                        {
+                                            skills.remove(inputForChange);
+                                            System.out.println("Enter new name: ");
+                                            inputForChange = kbd.nextLine();
+                                            skills.add(inputForChange);
+                                            whileFIX = 1;
+                                        }
                                     }
                                 }
+                                whileFIX = 0;
                                 break;
 //Change Address
                             case 4:
                                 System.out.println(address);
                                 System.out.println("Enter the address you would like to change.");
                                 inputForChange = kbd.nextLine();
-                                for(i = 0; i < address.size(); i++)
+                                whileFIX = 0;
+                                while(whileFIX == 0)
                                 {
-                                    if(address.get(i) == inputForChange)
+                                    for(i = 0; i < address.size(); i++)
                                     {
-                                        address.remove(inputForChange);
-                                        System.out.println("Enter new name: ");
-                                        inputForChange = kbd.nextLine();
-                                        address.add(inputForChange);
+                                        if(address.get(i) == inputForChange)
+                                        {
+                                            address.remove(inputForChange);
+                                            System.out.println("Enter new name: ");
+                                            inputForChange = kbd.nextLine();
+                                            address.add(inputForChange);
+                                            whileFIX = 1;
+                                        }
                                     }
                                 }
+                                whileFIX = 0;
                                 break;
 //Change Password
                             case 5:
                                 System.out.println("Enter the password you would like to change.");
                                 inputForChange = kbd.nextLine();
-                                for(i = 0; i < name.size(); i++)
+                                whileFIX = 0;
+                                while(whileFIX == 0)
                                 {
-                                    if(passwordArray.get(i) == inputForChange)
+                                    for(i = 0; i < name.size(); i++)
                                     {
-                                        passwordArray.remove(inputForChange);
-                                        System.out.println("Enter new password: ");
-                                        inputForChange = kbd.nextLine();
-                                        passwordArray.add(inputForChange);
+                                        if(passwordArray.get(i) == inputForChange)
+                                        {
+                                            passwordArray.remove(inputForChange);
+                                            System.out.println("Enter new password: ");
+                                            inputForChange = kbd.nextLine();
+                                            passwordArray.add(inputForChange);
+                                            whileFIX = 1;
+                                        }
                                     }
                                 }
+                                whileFIX = 0;
                                 break;
                             case 6:
                                 break;
@@ -363,6 +381,7 @@ public class AstronautAdministrator
         }
         catch(Exception e)
         {
+            e.getMessage();
             return false;
         }
     }

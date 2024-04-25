@@ -1,6 +1,7 @@
+import java.io.IOException;
 import java.util.Scanner;
 public class MainTest{
-    public static void main(String[] args)
+    public static void main(String[] args) throws IOException
     {
         String conformation;
         String passwordCheck;
@@ -55,11 +56,23 @@ public class MainTest{
                         conformation = kbd.nextLine();
                         if(conformation.equals("yes"))
                         {
-                            System.out.println("Enter your password.");
-                            passwordCheck = kbd.nextLine();
-                            if(safty.checkPassword(passwordCheck))
+                            whileFIX = 0;
+                            while(whileFIX == 0)
                             {
-                                astroAdmin.switchAstronautInfo();
+                                System.out.println("Enter your password. Or 'exit'");
+                                passwordCheck = kbd.nextLine();
+                                if(safty.checkPassword(passwordCheck))
+                                {
+                                    astroAdmin.switchAstronautInfo();
+                                }
+                                if(!safty.checkPassword(passwordCheck))
+                                {
+                                    System.out.println("Your password was incorrect. Try again.");
+                                }
+                                if(passwordCheck.equals("exit"))
+                                {
+                                    whileFIX = 1;
+                                }
                             }
                         }
                         else if(conformation.equals("no"))
