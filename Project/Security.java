@@ -61,24 +61,23 @@ public class Security {
     }
 
 
-    public boolean checkPassword(String password)
+    public boolean checkPassword(String password) throws IOException
     {
+        BufferedReader reader = new BufferedReader(new FileReader(file))
+        currentLine = reader.readLine();
         newPassword = "";
-        for(int i = 0; i < password.length(); i++){
+        for(int i = 0; i < password.length(); i++)
+        {
             betterLetter = password.charAt(i);
-            ascii = (int) betterLetter - 10;
+            ascii = (int) betterLetter + 10;
             betterLetter = (char) ascii;
             letter = String.valueOf(betterLetter);
             newPassword += letter;
-          }
-        for(i = 0; i < passwordHolder.size(); i++)
-        {
-            System.out.println(newPassword);///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            if(newPassword.equals(passwordHolder.get(i)))
+        }
+            if(newPassword.equals(currentLine))
             {
                 return true;
             }
-        }
         return false;
     }
 
@@ -112,7 +111,7 @@ public class Security {
         {
             writer.write(newPassword);
         }
-        catch(Exception ex)
+        catch(IOException ex)
         {
             System.out.println(ex.getMessage());
         }

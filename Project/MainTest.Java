@@ -45,9 +45,11 @@ public class MainTest{
             kbd.nextLine();
             switch(index)
             {
+//Astro info
                 case 1:
                     System.out.println("Name: \n" + astro.getName() + "\nSkills: \n" + astro.getSkills() + "\nAddress: \n" + astro.getAddress() + "\nID: \n" + astro.getID() + "\nAmount of family: \n" + astro.getFamilyNumbers());
                     break;
+//Astro admin
                 case 2:
                     whileFIX = 0;
                     while(whileFIX == 0)
@@ -90,9 +92,11 @@ public class MainTest{
                     }
                     whileFIX = 0;
                     break;
+//Ship info
                 case 3:
                     System.out.println("Name: \n" + ship.getShipName() + "\nFuel: \n" + ship.getShipFuel() + "\nFuel Capacity: \n" + ship.getFuelCap() + "\nCrew Capacity: \n" + ship.getCrewCap());
                     break;
+//Ship admin
                 case 4:
                     whileFIX = 0;
                     while(whileFIX == 0)
@@ -101,11 +105,23 @@ public class MainTest{
                         conformation = kbd.nextLine();
                         if(conformation.equals("yes"))
                         {
-                            System.out.println("Enter your password.");
-                            passwordCheck = kbd.nextLine();
-                            if(safty.checkPassword(passwordCheck))
+                            whileFIX = 0;
+                            while(whileFIX == 0)
                             {
-                                shipAdmin.switchSpaceshipInfo();
+                                System.out.println("Enter your password. Or 'exit'");
+                                passwordCheck = kbd.nextLine();
+                                if(safty.checkPassword(passwordCheck))
+                                {
+                                    shipAdmin.switchSpaceshipInfo();
+                                }
+                                if(!safty.checkPassword(passwordCheck))
+                                {
+                                    System.out.println("Your password was incorrect. Try again.");
+                                }
+                                if(passwordCheck.equals("exit"))
+                                {
+                                    whileFIX = 1;
+                                }
                             }
                         }
                         else if(conformation.equals("no"))
@@ -119,6 +135,7 @@ public class MainTest{
                     }
                     whileFIX = 0;
                     break;
+//Launch
                 case 5:
                     whileFIX = 0;
                     while(whileFIX == 0)
@@ -130,6 +147,7 @@ public class MainTest{
                             if(launchAttempt.takeOFF())
                             {
                                 System.out.println("Launch successful!");
+                                whileFIX = 1;
                             }
                             if(!launchAttempt.takeOFF())
                             {
@@ -147,6 +165,7 @@ public class MainTest{
                     }
                     whileFIX = 0;
                     break;
+//Log off
                 case 6:
                     a = 0;
                     whileFIX = 0;

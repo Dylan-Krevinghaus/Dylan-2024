@@ -62,7 +62,7 @@ public class AstronautAdministrator
                     whileFIX = 0;
                         while(whileFIX == 0)
                         {
-                            System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. ID \n3. Skills \n4. Address \n5. Family numbers \n6. Exit");
+                            System.out.println("Please enter the number that correlates with the thing you would like to add: \n1. Name \n2. ID \n3. Skills \n4. Address \n5. Family numbers \n6. Exit");
                             verifyString = kbd.nextLine();
                             if(possibleINTEGER(verifyString))
                             {
@@ -126,7 +126,7 @@ public class AstronautAdministrator
                         whileFIX = 0;
                         while(whileFIX == 0)
                         {
-                            System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. ID \n3. Skills \n4. Address \n5. Family numbers \n6. Exit");
+                            System.out.println("Please enter the number that correlates with the thing you would like to remove: \n1. Name \n2. ID \n3. Skills \n4. Address \n5. Family numbers \n6. Exit");
                             verifyString= kbd.nextLine();                            
                             if(possibleINTEGER(verifyString))
                             {
@@ -151,6 +151,7 @@ public class AstronautAdministrator
                         {
 //Remove Name
                             case 1:
+                                System.out.println(name);
                                 System.out.println("Please type in the exact name you would like to remove");
                                 removeName = kbd.nextLine();
                                 for(i = 0; i < name.size(); i++)
@@ -164,6 +165,7 @@ public class AstronautAdministrator
                                 break;
 //Remove ID
                             case 2:
+                                System.out.println(id);
                                 System.out.println("Please type in the exact ID you would like to remove");
                                 removeID = kbd.nextInt();
                                 kbd.nextLine();
@@ -178,6 +180,7 @@ public class AstronautAdministrator
                                 break;
 //Remove Skills
                             case 3:
+                                System.out.println(skills);
                                 System.out.println("Please type in the exact skills you would like to remove");
                                 removeSkills = kbd.nextLine();
                                 for(i = 0; i < skills.size(); i++)
@@ -191,6 +194,7 @@ public class AstronautAdministrator
                                 break;
 //Remove Address
                             case 4:
+                                System.out.println(address);
                                 System.out.println("Please type in the exact address you would like to remove");
                                 removeAddress = kbd.nextLine();
                                 for(i = 0; i < address.size(); i++)
@@ -204,6 +208,7 @@ public class AstronautAdministrator
                                 break;
 //Remove Family Numbers
                             case 5:
+                                System.out.println(amountOfFamily);
                                 System.out.println("Please type in the exact family number you would like to remove");
                                 removeAmountOfFam = kbd.nextInt();
                                 kbd.nextLine();
@@ -226,7 +231,7 @@ public class AstronautAdministrator
                     whileFIX = 0;
                         while(whileFIX == 0)
                         {
-                            System.out.println("Please enter the number that correlates with the following: \n1. Name \n2. ID \n3. Skills \n4. Address \n5. Password \n6. Exit");
+                            System.out.println("Please enter the number that correlates with the thing that you would like to change: \n1. Name \n2. ID \n3. Skills \n4. Address \n5. Password \n6. Exit");
                             verifyString = kbd.nextLine();
                             if(possibleINTEGER(verifyString))
                             {
@@ -364,12 +369,9 @@ public class AstronautAdministrator
                         }
                         whileFIX = 0;
                         break;
-                        case 4:
-                            adminFIX = 4;
-                            whileFIX = 1;
-                            break;
                 }
             }
+            adminFIX = 4;
         }
     }
     public boolean possibleINTEGER(String verifyString)
