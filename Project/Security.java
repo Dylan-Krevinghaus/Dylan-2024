@@ -35,7 +35,7 @@ public class Security {
         {
             ex.getMessage();
         }
-        return true;
+        return false;
     }
 
 
@@ -86,7 +86,6 @@ public class Security {
     public void store(String password) throws IOException
     {
         //Store the password for login later
-        i = 0;
         newPassword = "";
         for(int i = 0; i < password.length(); i++)
         {
@@ -96,6 +95,7 @@ public class Security {
             letter = String.valueOf(betterLetter);
             newPassword += letter;
         }
+        i = 0;
         while(passwordHolder.size() != 0)
         {
             if(passwordHolder.get(i) == null)
