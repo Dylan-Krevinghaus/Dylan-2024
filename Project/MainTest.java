@@ -8,9 +8,7 @@ public class MainTest{
         String passwordStore;
         int whileFIX;
         int a = 0;
-        Astronaut astro = new Astronaut();
         AstronautAdministrator astroAdmin = new AstronautAdministrator();
-        Spaceship ship = new Spaceship();
         SpaceshipAdministrator shipAdmin = new SpaceshipAdministrator();
         Launch launchAttempt = new Launch();
         Security safty = new Security();
@@ -47,7 +45,7 @@ public class MainTest{
             {
 //Astro info
                 case 1:
-                    System.out.println("Name: \n" + astro.getName() + "\nSkills: \n" + astro.getSkills() + "\nAddress: \n" + astro.getAddress() + "\nID: \n" + astro.getID() + "\nAmount of family: \n" + astro.getFamilyNumbers());
+                    System.out.println("Name: \n" + astroAdmin.name + "\nSkills: \n" + astroAdmin.skills + "\nAddress: \n" + astroAdmin.address + "\nID: \n" + astroAdmin.id + "\nAmount of family: \n" + astroAdmin.amountOfFamily);
                     break;
 //Astro admin
                 case 2:
@@ -94,7 +92,7 @@ public class MainTest{
                     break;
 //Ship info
                 case 3:
-                    System.out.println("Name: \n" + ship.getShipName() + "\nFuel: \n" + ship.getShipFuel() + "\nFuel Capacity: \n" + ship.getFuelCap() + "\nCrew Capacity: \n" + ship.getCrewCap());
+                    System.out.println("Name: \n" + shipAdmin.shipName + "\nFuel: \n" + shipAdmin.shipFuel + "\nFuel Capacity: \n" + shipAdmin.fuelCapacity + "\nCrew Capacity: \n" + shipAdmin.crewCapacity);
                     break;
 //Ship admin
                 case 4:

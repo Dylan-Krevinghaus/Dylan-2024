@@ -6,7 +6,6 @@ public class Launch
     int i;
     int a = 0;
     boolean successInFlight;
-    Spaceship ship = new Spaceship();
     SpaceshipAdministrator shipAdmin = new SpaceshipAdministrator();
     Scanner kbd = new Scanner(System.in);
     public boolean takeOFF()
