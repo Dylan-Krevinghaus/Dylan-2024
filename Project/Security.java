@@ -20,7 +20,7 @@ public class Security {
     int a = 0;
 
 
-    public boolean firstTime() throws IOException
+    public boolean firstTime()
     {
         //check if it is the first time the user entered
         try(BufferedReader reader = new BufferedReader(new FileReader(file)))
@@ -33,7 +33,8 @@ public class Security {
         }
         catch(IOException ex)
         {
-            ex.getMessage();
+            return true;
+            // ex.getMessage();
         }
         return false;
     }
