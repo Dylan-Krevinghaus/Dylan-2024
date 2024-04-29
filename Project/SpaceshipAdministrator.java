@@ -302,7 +302,7 @@ public class SpaceshipAdministrator
                                     for(i = 0; i < shipName.size(); i++)
                                     {
                                         newShipName = shipName.get(i);
-                                        if(newShipName == removeShipName)
+                                        if(newShipName.equals(removeShipName))
                                         {
                                             shipName.remove(i);
                                             a = 1;
@@ -570,6 +570,7 @@ public class SpaceshipAdministrator
                         break;
                 }
             }
+            whileFIX = 1;
             adminFIX = 4;
         }
     }
