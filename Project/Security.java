@@ -67,15 +67,15 @@ public class Security {
         BufferedReader reader = new BufferedReader(new FileReader(file));
         currentLine = reader.readLine();
         newPassword = "";
-        for(int i = 0; i < password.length(); i++)
+        for(int i = 0; i < currentLine.length(); i++)
         {
-            betterLetter = password.charAt(i);
-            ascii = (int) betterLetter + 10;
+            betterLetter = currentLine.charAt(i);
+            ascii = (int) betterLetter - 10;
             betterLetter = (char) ascii;
             letter = String.valueOf(betterLetter);
             newPassword += letter;
         }
-            if(newPassword.equals(currentLine))
+            if(newPassword.equals(password))
             {
                 reader.close();
                 return true;
