@@ -9,7 +9,7 @@ public class Security {
     String password;
     String newPassword = "";
     String currentLine;
-    String file = "ReadingThings";
+    String file = "ReadingThings.dat";
     String letter;
     char betterLetter;
     Random rand = new Random();
