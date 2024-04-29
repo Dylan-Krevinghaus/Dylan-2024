@@ -14,12 +14,12 @@ public class SpaceshipAdministrator
     Scanner kbd = new Scanner(System.in);
 //Constructor//
     public SpaceshipAdministrator(String shipName, int shipFuel, int fuelCapacity, int crewCapacity)
-        {
-            this.shipName.add(shipName);
-            this.shipFuel.add(shipFuel);
-            this.fuelCapacity.add(fuelCapacity);
-            this.crewCapacity.add(crewCapacity);
-        }
+    {
+        this.shipName.add(shipName);
+        this.shipFuel.add(shipFuel);
+        this.fuelCapacity.add(fuelCapacity);
+        this.crewCapacity.add(crewCapacity);
+    }
     public SpaceshipAdministrator()
     {
     }
