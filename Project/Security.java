@@ -63,7 +63,7 @@ public class Security {
 
     public boolean checkPassword(String password) throws IOException
     {
-        BufferedReader reader = new BufferedReader(new FileReader(file))
+        BufferedReader reader = new BufferedReader(new FileReader(file));
         currentLine = reader.readLine();
         newPassword = "";
         for(int i = 0; i < password.length(); i++)
