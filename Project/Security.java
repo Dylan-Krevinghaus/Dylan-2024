@@ -76,8 +76,10 @@ public class Security {
         }
             if(newPassword.equals(currentLine))
             {
+                reader.close();
                 return true;
             }
+            reader.close();
         return false;
     }
 
