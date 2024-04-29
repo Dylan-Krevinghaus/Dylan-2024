@@ -103,11 +103,12 @@ public class MainTest{
                         conformation = kbd.nextLine();
                         if(conformation.equals("yes"))
                         {
+                            System.out.println("Enter your password. Or 'exit'");
+                            passwordCheck = kbd.nextLine();
                             whileFIX = 0;
                             while(whileFIX == 0)
                             {
-                                System.out.println("Enter your password. Or 'exit'");
-                                passwordCheck = kbd.nextLine();
+                                
                                 if(safty.checkPassword(passwordCheck))
                                 {
                                     shipAdmin.switchSpaceshipInfo();
