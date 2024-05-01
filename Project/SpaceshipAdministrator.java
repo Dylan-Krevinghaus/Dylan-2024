@@ -92,7 +92,7 @@ public class SpaceshipAdministrator
                                     vailidity = true;
                                     for(i = 0; i < shipName.size(); i++)
                                     {
-                                        if(newShipName == shipName.get(i))
+                                        if(newShipName.equals(shipName.get(i)))
                                         {
                                             System.out.println("This ship has already been made.");
                                             vailidity = false;
@@ -116,7 +116,7 @@ public class SpaceshipAdministrator
                                     shipCheck = kbd.nextLine();
                                     for(i = 0; i < shipName.size(); i++)
                                     {
-                                        if(shipCheck == shipName.get(i))
+                                        if(shipCheck.equals(shipName.get(i)))
                                         {
                                             a = 1;
                                             break;
@@ -155,7 +155,7 @@ public class SpaceshipAdministrator
                                     shipCheck = kbd.nextLine();
                                     for(i = 0; i < shipName.size(); i++)
                                     {
-                                        if(shipCheck == shipName.get(i))
+                                        if(shipCheck.equals(shipName.get(i)))
                                         {
                                             a = 1;
                                             break;
@@ -194,7 +194,7 @@ public class SpaceshipAdministrator
                                     shipCheck = kbd.nextLine();
                                     for(i = 0; i < shipName.size(); i++)
                                     {
-                                        if(shipCheck == shipName.get(i))
+                                        if(shipCheck.equals(shipName.get(i)))
                                         {
                                             a = 1;
                                             break;
@@ -233,7 +233,7 @@ public class SpaceshipAdministrator
                                     shipCheck = kbd.nextLine();
                                     for(i = 0; i < shipName.size(); i++)
                                     {
-                                        if(shipCheck == shipName.get(i))
+                                        if(shipCheck.equals(shipName.get(i)))
                                         {
                                             a = 1;
                                             break;
@@ -329,7 +329,7 @@ public class SpaceshipAdministrator
                                     shipCheck = kbd.nextLine();
                                     for(i = 0; i < shipName.size(); i++)
                                     {
-                                        if(shipCheck == shipName.get(i))
+                                        if(shipCheck.equals(shipName.get(i)))
                                         {
                                             a = 1;
                                             break;
@@ -363,12 +363,12 @@ public class SpaceshipAdministrator
                                                 whileFIX = 0;
                                                 while(whileFIX == 0)
                                                 {
-                                                    if(removeYesOrNo == "Yes")
+                                                    if(removeYesOrNo.equals("Yes"))
                                                     {
                                                         shipFuel.remove(i);
                                                         whileFIX = 1;
                                                     }
-                                                    else if(removeYesOrNo == "No")
+                                                    else if(removeYesOrNo.equals("No"))
                                                     {
                                                         shipFuel.set(i, 0);
                                                         whileFIX = 1;
@@ -394,7 +394,7 @@ public class SpaceshipAdministrator
                                     shipCheck = kbd.nextLine();
                                     for(i = 0; i < shipName.size(); i++)
                                     {
-                                        if(shipCheck == shipName.get(i))
+                                        if(shipCheck.equals(shipName.get(i)))
                                         {
                                             a = 1;
                                             break;
@@ -422,7 +422,7 @@ public class SpaceshipAdministrator
                                     shipCheck = kbd.nextLine();
                                     for(i = 0; i < shipName.size(); i++)
                                     {
-                                        if(shipCheck == shipName.get(i))
+                                        if(shipCheck.equals(shipName.get(i)))
                                         {
                                             a = 1;
                                             break;
@@ -450,7 +450,7 @@ public class SpaceshipAdministrator
                                     shipCheck = kbd.nextLine();
                                     for(i = 0; i < shipName.size(); i++)
                                     {
-                                        if(shipCheck == shipName.get(i))
+                                        if(shipCheck.equals(shipName.get(i)))
                                         {
                                             a = 1;
                                             break;
